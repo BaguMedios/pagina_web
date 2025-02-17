@@ -78,7 +78,7 @@ try {
     $mail->send();
 
     // Redirigir después de enviar
-    echo '<script>alert("La información fue enviada correctamente"); window.location.href = "../index.html";</script>';
+    echo '<script>alert("La información fue enviada correctamente"); window.location.href = "../Agradecimiento.php";</script>';
 
 } catch (Exception $e) {
     echo "El mensaje no se pudo enviar. Error de Mailer: {$mail->ErrorInfo}";

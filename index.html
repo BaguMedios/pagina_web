@@ -157,6 +157,9 @@
                                             <li><a href="#">Ultima noticia</a></li>
                                         </ul>
                                     </li>
+                                    <li>
+                                        <a href="./Dtf_impresiones.html">DTF impresiones</a>
+                                    </li>
                                     <li><a href="./contact.html">Contactanos</a></li>
                                 </ul>
                             </nav>
@@ -217,6 +220,15 @@
                             <div class="contact-form-box shadow-box">
                                 <h3 class="title">CONTACTANOS EN BAGU MEDIOS</h3>
                                 <form method="POST" action="./src/contact_home.php">
+                                    <dotlottie-player
+                                    src="https://lottie.host/acc07c23-ceaf-4c39-8465-c07a00ddd011/s3K5a5xpql.lottie"
+                                    background="transparent"
+                                    speed="1"
+                                    id="lottie_carga"
+                                    style="width: 280px; height: 280px; z-index: 18; margin: auto; display: none;"
+                                    loop
+                                    autoplay
+                                    ></dotlottie-player>
                                     <div class="form-group">
                                         <label>Nombre</label>
                                         <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
@@ -230,7 +242,7 @@
                                         <input type="tel" class="form-control" name="numero" placeholder="+57 00000000" required>
                                     </div>
                                     <div class="form-group">
-                                        <button type="submit" class="axil-btn btn-borderd btn-fluid btn-primary" >CONTACTANOS AHORA</button>
+                                        <button type="submit" class="axil-btn btn-borderd btn-fluid btn-primary" id = "button_enviar">CONTACTANOS AHORA</button>
                                     </div>
                                 </form>
                             </div>
@@ -305,11 +317,27 @@
                         <button data-filter="*" class="is-checked"><span class="filter-text">Todos</span></button>
                         <button data-filter=".btl"><span class="filter-text">BTL</span></button>
                         <button data-filter=".atl"><span class="filter-text">ATL</span></button>
+                        <button data-filter=".dtf"><span class="filter-text">DTF</span></button>
                         <button data-filter=".web"><span class="filter-text">WEB</span></button>
                         <button data-filter=".catering"><span class="filter-text">CATERING</span></button>
                         <button data-filter=".pop"><span class="filter-text">MATERIAL POP</span></button>
                     </div>
                     <div class="row row-35 isotope-list">
+                        <div class="row row-35 isotope-list">
+                            <div class="col-md-6 project dtf">
+                                <div class="project-grid">
+                                    <div class="thumbnail">
+                                        <a href="./Dtf_impresiones.html">
+                                            <img src="./images/dtf/Imagensobre dtf.png" alt="Impresora dtf">
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <h4 class="title"><a href="#">DTF</a></h4>
+                                        <span class="subtitle">Impresiones en DTF</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>    
                         <div class="col-md-6 project btl">
                             <div class="project-grid">
                                 <div class="thumbnail">
@@ -906,7 +934,10 @@
             </div>
         </footer>
     </div>
-
+    <!-- Formulario de contacto js -->
+    <script src="./assets/js/index.js"></script>
+    <!-- Lottifiles librerias -->
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"type="module"></script>
     <!-- Jquery Js -->
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>

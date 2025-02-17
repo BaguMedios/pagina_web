@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vista Previa de Estampado - Impresión DTF</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Fabric.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+  <style>
+    .canvas-container {
+      width: 300px;
+      height: 300px;
+      margin: auto;
+      border: 2px solid #ddd;
+      position: relative;
+      /* El fondo se asigna en el canvas para que se incluya en la descarga */
+    }
+  </style>
+</head>
+<body class="bg-light text-center">
+
+  <div class="container mt-5">
+    <h2>Sube tu imagen y visualiza cómo se verá en el producto</h2>
+    
+    <!-- Selector de producto -->
+    <div class="mb-3">
+      <select id="productSelect" class="form-select w-50 mx-auto">
+        <option value="./assets/products/mug.png">Vaso</option>
+        <option value="./assets/products/camisa.png">Camisa</option>
+        <option value="products/hat.png">Gorro</option>
+      </select>
+    </div>
+    
+    <!-- Formulario de carga de imagen -->
+    <form id="uploadForm" class="mt-3">
+      <input type="file" id="imageInput" accept="image/png" class="form-control">
+    </form>
+    
+    <h4 class="mt-4">Vista Previa:</h4>
+    <div class="canvas-container mt-3">
+      <canvas id="productCanvas"></canvas>
+    </div>
+    
+    <button id="saveImage" class="btn btn-primary mt-3">Guardar Diseño</button>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Inicializar el canvas con fondo transparente para ver el fondo asignado
+    let canvas = new fabric.Canvas('productCanvas', {
+      width: 300,
+      height: 300,
+      backgroundColor: 'transparent'
+    });
+
+    // Función para cargar la imagen del producto como fondo del canvas
+    function loadProductBackground(url) {
+      fabric.Image.fromURL(url, function(img) {
+        // Escalar la imagen del producto para que se ajuste al canvas
+        let scaleX = canvas.width / img.width;
+        let scaleY = canvas.height / img.height;
+        canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
+          scaleX: scaleX,
+          scaleY: scaleY
+        });
+      }, { crossOrigin: 'anonymous' });
+    }
+
+    // Cargar el fondo del producto seleccionado (por defecto, el primer valor)
+    loadProductBackground(document.getElementById("productSelect").value);
+
+    // Actualizar el fondo al cambiar la selección del producto
+    document.getElementById("productSelect").addEventListener("change", function() {
+      loadProductBackground(this.value);
+      // Opcional: eliminar la imagen subida si se desea reiniciar el diseño
+      canvas.getObjects().forEach(function(obj) {
+        if (obj.customType === 'userImage') {
+          canvas.remove(obj);
+        }
+      });
+    });
+
+    // Manejar la carga de la imagen del usuario
+    document.getElementById("imageInput").addEventListener("change", function(event) {
+      let file = event.target.files[0];
+      if (file) {
+        let reader = new FileReader();
+        reader.onload = function(e) {
+          fabric.Image.fromURL(e.target.result, function(img) {
+            // Eliminar imágenes previas subidas
+            canvas.getObjects().forEach(function(obj) {
+              if (obj.customType === 'userImage') {
+                canvas.remove(obj);
+              }
+            });
+            // Configurar la imagen del usuario: 
+            // - Se centra en el canvas (usando originX/originY: 'center')
+            // - Se escala para que tenga un ancho de 150px (manteniendo proporción)
+            img.set({
+              originX: 'center',
+              originY: 'center',
+              left: canvas.getWidth() / 2,
+              top: canvas.getHeight() / 2,
+              selectable: true,
+              customType: 'userImage'
+            });
+            let scaleFactor = 150 / img.width;
+            img.scale(scaleFactor);
+            
+            // Si el producto seleccionado es un vaso, aplicar un efecto para simular la curvatura
+            let selectedProduct = document.getElementById("productSelect").value;
+            if (selectedProduct.includes("cup.png")) {
+              // Por ejemplo, aplicar un skew horizontal. Ajusta el valor según lo que necesites.
+              img.set('skewX', -150);
+            }
+            
+            canvas.add(img);
+            canvas.renderAll();
+          }, { crossOrigin: 'anonymous' });
+        };
+        reader.readAsDataURL(file);
+      }
+    });
+
+    // Manejar la descarga del diseño compuesto (producto + imagen)
+    document.getElementById("saveImage").addEventListener("click", function() {
+      let dataURL = canvas.toDataURL("image/png");
+      let a = document.createElement("a");
+      a.href = dataURL;
+      a.download = "mi_diseño.png";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    });
+  </script>
+</body>
+</html>
