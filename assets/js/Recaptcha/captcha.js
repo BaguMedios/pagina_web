@@ -1,6 +1,5 @@
-function validate(e) {
-    e.preventDefault();
-    grecaptcha.enterprise.ready(async () => {
-        const token = await grecaptcha.enterprise.execute('6LckMGQqAAAAADV3aj7WV-llXPXPYGMavymV7PxS', {action: 'LOGIN'});
+grecaptcha.ready(function() {
+    grecaptcha.execute('6LefM9wAAAAAEDFD1OQOXD-HYhEc2_Q_0BYVkjU', {action: 'contact'}).then(function(token) {
+        document.getElementById('g-recaptcha-response').value = token;
     });
-}
+});

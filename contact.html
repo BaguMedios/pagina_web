@@ -19,6 +19,14 @@
     <link rel="stylesheet" href="assets/css/vendor/green-audio-player.min.css">
     <link rel="stylesheet" href="assets/css/vendor/odometer-theme-default.css">
 
+    <!-- Carga de la API de reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LefM9wqAAAAAEDFD1OQOXD-HYhEc2_Q_0BYVkjU"></script>
+
+    <!--Recaptcha js -->
+    <script src="./assets/js/Recaptcha/captcha.js"></script>
+    <script src="./assets/js/Recaptcha/confirmacion.js"></script>
+
+
     <!-- Google Tag Manager -->
     <script>
         (function(w,d,s,l,i){
@@ -254,7 +262,24 @@
                                     <input type="tel" class="form-control" name="numero" placeholder="+57 00000000" required>
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="axil-btn btn-borderd btn-fluid btn-primary" id = "button_enviar">CONTACTANOS AHORA</button>
+                                    <label for="servicio">Servicio de interes</label>
+                                    <select name="servicio" id="servicios" class="form-control" required>
+                                        <option value="BTL">BTL (volanteo y mucho mas )</option>
+                                        <option value="ATL">ATL (Vallas, Television o Radio )</option>
+                                        <option value="DTF">DTF IMPRESIONES</option>
+                                        <option value="POP MAN HOLOGRAFICO">POP MAN HOLOGRAFICO</option>
+                                        <option value="CATERING PARA EVENTOS">CATERING PARA EVENTOS</option>
+                                        <option value="DISEÑO WEB">DISEÑO WEB</option>
+                                    </select>
+                                </div>
+                                <div class="form group">
+                                    <label>Cuentanos mas sobre lo que deseas</label>
+                                    <textarea class="form-control" name="informacion" id="informacio_usuario" rows="4"></textarea>
+                                </div>
+                                <!-- Campo oculto para el token de reCAPTCHA -->
+                                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                                <div class="form-group">
+                                    <button type="submit" class="axil-btn btn-borderd btn-fluid btn-primary mt-3" id = "button_enviar">CONTACTANOS AHORA</button>
                                 </div>
                             </form>
                         </div>
@@ -478,6 +503,10 @@
         </div>
     </div>
 
+    <!-- Formulario de contacto js -->
+    <script src="./assets/js/index.js"></script>
+    <!-- Lottifiles librerias -->
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"type="module"></script>
     <!-- Jquery Js -->
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/vendor/bootstrap.min.js"></script>
