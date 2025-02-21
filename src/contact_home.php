@@ -1,22 +1,26 @@
 <?php
+// Incluimos la conexión con la base de datos
+include('../SQL/conexion.php');
+
 // ================================
 // Verificación de reCAPTCHA v3
 // ================================
 
-// Verificar que se haya enviado el token de reCAPTCHA
+// Verificar que se haya enviado el token de reCAPTCHA v3
 if (!isset($_POST['g-recaptcha-response']) || empty($_POST['g-recaptcha-response'])) {
     echo "Error: No se recibió el token de reCAPTCHA.";
     exit;
 }
 
 $recaptchaResponse = $_POST['g-recaptcha-response'];
-$secretKey = '6LefM9wqAAAAAPyiWzloDFsDT8BQzSJvQ3RWNkqN';
+// Clave secreta de reCAPTCHA v3 (ya establecida en tu código)
+$secretKeyV3 = '6LefM9wqAAAAAPyiWzloDFsDT8BQzSJvQ3RWNkqN';
 $remoteIp = $_SERVER['REMOTE_ADDR'];
 $recaptchaUrl = 'https://www.google.com/recaptcha/api/siteverify';
 
 // Preparar datos para la verificación
 $data = [
-    'secret'   => $secretKey,
+    'secret'   => $secretKeyV3,
     'response' => $recaptchaResponse,
     'remoteip' => $remoteIp
 ];
@@ -33,21 +37,37 @@ $context  = stream_context_create($options);
 $response = file_get_contents($recaptchaUrl, false, $context);
 $result = json_decode($response, true);
 
-// Para depuración, puedes descomentar estas líneas y verificar la respuesta:
+// Para depuración, puedes descomentar estas líneas:
 // echo "<pre>";
 // print_r($result);
 // echo "</pre>";
 // exit;
 
-$umbral = 0.3; // Umbral de puntuación para pruebas
+$umbral = 0.5; // Umbral de puntuación
 
 if (!$result['success'] || $result['score'] < $umbral) {
-    echo "Error: La verificación de reCAPTCHA falló. Por favor, inténtalo de nuevo.";
+    // Si la puntuación es baja, se solicita la verificación adicional con reCAPTCHA v2
+    echo "Parece que tienes que hacer una verificación adicional. Completa el siguiente captcha:";
+    ?>
+    <form action="fallback_verificacion.php" method="post">
+        <!-- Reenviamos los datos del formulario mediante campos ocultos -->
+        <input type="hidden" name="nombre" value="<?php echo htmlspecialchars($_POST['nombre']); ?>">
+        <input type="hidden" name="correo" value="<?php echo htmlspecialchars($_POST['correo']); ?>">
+        <input type="hidden" name="numero" value="<?php echo htmlspecialchars($_POST['numero']); ?>">
+        <input type="hidden" name="servicio" value="<?php echo isset($_POST['servicio']) ? htmlspecialchars($_POST['servicio']) : ''; ?>">
+        <input type="hidden" name="informacion" value="<?php echo isset($_POST['informacion']) ? htmlspecialchars($_POST['informacion']) : ''; ?>">
+        <!-- Widget de reCAPTCHA v2 usando la clave de sitio proporcionada -->
+        <div class="g-recaptcha" data-sitekey="6LeJYt4qAAAAAC2A42JXyV-LeORXcWEpZ9fAW5HQ"></div>
+        <br>
+        <input type="submit" class="btn btn-success" value="Enviar">
+    </form>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <?php
     exit;
 }
 
 // ================================
-// Procesamiento de los datos del formulario
+// Procesamiento de los datos del formulario (si reCAPTCHA v3 es exitoso)
 // ================================
 
 $numero      = filter_var($_POST['numero'], FILTER_SANITIZE_STRING);
@@ -62,10 +82,13 @@ if (!$correo || empty($nombre) || empty($numero)) {
     exit;
 }
 
-// ================================
-// Preparar el contenido de los correos
-// ================================
+// Preparar la consulta para insertar los datos
+$stmt = $conn->prepare("INSERT INTO `cotizaciones_web` (`nombre`, `correo`, `numero`, `servicio`, `informacion`) VALUES (?, ?, ?, ?, ?)");
+$stmt->bind_param("sssss", $nombre, $correo, $numero, $servicio, $informacion);
+$stmt->execute();
+$stmt->close();
 
+// Preparar el contenido de los correos
 $template_path   = '../mail/mail_cliente.html';
 $template_path_2 = '../mail/mail_operador.html';
 
@@ -85,14 +108,10 @@ $email_content_2 = str_replace(
     $email_template_2
 );
 
-// ================================
 // Enviar los correos con PHPMailer
-// ================================
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
 require '../vendor/autoload.php';
 
 try {
@@ -105,15 +124,13 @@ try {
     $mail2->Password   = 'WebBagu2024*';
     $mail2->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail2->Port       = 465;
-
     $mail2->setFrom('webcotizaciones@bagumedios.com', 'NUEVO CLIENTE BAGU MEDIOS');
     $mail2->addAddress('santiago@bagumedios.com', 'Santiago');
     $mail2->addAddress('mediosads@bagumedios.com', 'Diego');
     $mail2->addAddress('paola.gomez@bagumedios.com', 'Paola');
     $mail2->addAddress('auxiliar_contable@bagumedios.com', 'Laura');
-    $mail2->addAddress('gerencia@bagumedios.com','wilmar');
-    $mail2->addAddress('direccion.comercial@bagumedio.com','anyela');
-
+    $mail2->addAddress('gerencia@bagumedios.com', 'Wilmar');
+    $mail2->addAddress('direccion.comercial@bagumedio.com', 'Anyela');
     $mail2->isHTML(true);
     $mail2->Subject = 'NUEVO CLIENTE PAGINA WEB';
     $mail2->Body    = $email_content_2;
@@ -128,10 +145,8 @@ try {
     $mail->Password   = 'WebBagu2024*';
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
     $mail->Port       = 465;
-
     $mail->setFrom('webcotizaciones@bagumedios.com', 'BAGU MEDIOS SAS');
     $mail->addAddress($correo, $nombre);
-
     $mail->isHTML(true);
     $mail->Subject = 'COTIZACION PROCESADA';
     $mail->Body    = $email_content;
@@ -143,4 +158,5 @@ try {
     echo "El mensaje no se pudo enviar. Error de Mailer: {$mail->ErrorInfo}";
 }
 ?>
+
 
