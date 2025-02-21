@@ -1,21 +1,17 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function() {
     grecaptcha.ready(function() {
-        grecaptcha.execute('6LefM9wqAAAAAEDFD1OQOXD-HYhEc2_Q_0BYVkjU', {action: 'contacto'})
+        grecaptcha.execute('6LefM9wqAAAAAEDFD1OQOXD-HYhEc2_Q_0BYVkjU', { action: 'contact' })
         .then(function(token) {
-            document.getElementById('g-recaptcha-response').value = token;
+            const recaptchaResponse = document.getElementById('g-recaptcha-response');
+            if (recaptchaResponse) {
+                recaptchaResponse.value = token; // Asigna el token al campo oculto
+            } else {
+                console.error("El elemento 'g-recaptcha-response' no se encontró en el DOM.");
+                console.log/("el token no fue incluido")
+            }
+        }).catch(function(error) {
+            console.error("Error al ejecutar grecaptcha:", error);
         });
     });
 });
-
-document.querySelector("form").addEventListener("submit", function(event) {
-    event.preventDefault(); // Detener el envío del formulario
-    grecaptcha.execute('6LefM9wqAAAAAEDFD1OQOXD-HYhEc2_Q_0BYVkjU', {action: 'contacto'})
-    .then(function(token) {
-        document.getElementById('g-recaptcha-response').value = token;
-        event.target.submit(); // Enviar el formulario después de actualizar el token
-    });
-});
-
-console.log(document.getElementById('g-recaptcha-response').value);
-
 
