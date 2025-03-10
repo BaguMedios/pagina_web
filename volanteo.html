@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
     <link rel="stylesheet" href="assets/css/vendor/green-audio-player.min.css">
     <link rel="stylesheet" href="assets/css/vendor/odometer-theme-default.css">
+    <link rel="stylesheet" href="./home_logica/menu.css">
     <!--CDN de leflet-->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -73,98 +74,80 @@
     </div>
 
     <div id="main-wrapper" class="main-wrapper">
-        <!-- Header -->
+        <!--=====================================-->
+        <!--=        Header Area Start       	=-->
+        <!--=====================================-->
         <header class="header axil-header header-style-4" style="height: 120px;">
-        <div id="axil-sticky-placeholder"></div>
-        <div class="axil-mainmenu">
-            <div class="container">
-            <div class="header-navbar">
-                <div class="header-logo">
-                <a href="index.html"><img src="./assets/media/logo-blanco-bagu.png" alt="logo" style="width: 100px;"></a>
-                </div>
-                <div class="header-main-nav">
-                <!-- Menú principal -->
-                <nav class="mainmenu-nav" id="mobilemenu-popup">
-                    <div class="d-block d-lg-none">
-                    <div class="mobile-nav-header">
-                        <div class="mobile-nav-logo">
-                        <a href="index.html">
-                            <img class="light-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
-                            <img class="dark-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
-                        </a>
+            <div id="axil-sticky-placeholder"></div>
+            <div class="axil-mainmenu">
+                <div class="container">
+                    <div class="header-navbar">
+                        <div class="header-logo">
+                            <a href="index.html"><img src="./assets/media/logo-blanco-bagu.png" alt="logo" style="width: 100px;"></a>
                         </div>
-                        <button class="mobile-menu-close" data-bs-dismiss="offcanvas"><i class="fas fa-times"></i></button>
+                        <div class="header-main-nav">
+                            <!-- Start Mainmanu Nav -->
+                            <nav class="mainmenu-nav" id="mobilemenu-popup">
+                                <div class="d-block d-lg-none">
+                                    <div class="mobile-nav-header">
+                                        <div class="mobile-nav-logo">
+                                            <a href="index.html">
+                                                <img class="light-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
+                                                <img class="dark-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
+                                            </a>
+                                        </div>
+                                        <button class="mobile-menu-close" data-bs-dismiss="offcanvas"><i class="fas fa-times"></i></button>
+                                    </div>
+                                </div>
+                                <ul class="mainmenu">
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">BTL</a>
+                                        <ul class="axil-submenu">
+                                            <li><a href="./volanteo.html">Volanteo intinerante</a></li>
+                                            <li><a href="./volanteoLed.html">volanteo con pantalla led</a></li>
+                                            <li><a href="./Carro_valla.html">Carro valla</a></li>
+                                            <li><a href="./centrosComerciales.html">Publicidad en centros comerciales y aeropuertos </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">Transporte masivo</a>
+                                        <ul class="axil-submenu">
+                                            <li><a href="./transmilenio.html">Publicidad en Transmilenio</a></li>
+                                            <li><a href="./busesCali.html">Publicidad buses cali</a></li>
+                                            <li><a href="./busesBarraquilla.html">Publicdad buses barranquilla</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">Publicidad Digital</a>
+                                        <ul class="axil-submenu">
+                                            <li><a href="./publicidadFacebook.html">Publicidad facebook ads</a></li>
+                                            <li><a href="./publicidadGoogleAds.html">Publicidad Google ads (search console)</a></li>
+                                            <li><a href="./PublicidadPush.html">Push multimedia</a></li>
+                                            <li><a href="./publicidadYoutube.html">Pauta en youtube</a></li>
+                                            <li><a href="./publicidadAplicaciones">Pauta en aplicaciones </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="menu-item-has-children">
+                                        <a href="javascript:void(0);">Blog</a>
+                                        <ul class="axil-submenu">
+                                            <li><a href="./blog/blog.html">Blog</a></li>
+                                            <li><a href="./blog/ultimaNoticia.js">Ultima noticia</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="./Dtf_impresiones.html">DTF impresiones</a>
+                                    </li>
+                                    <li>
+                                        <a href="./clientes.html">Clientes</a>
+                                    </li>
+                                    <button class="contactMenuButton" onclick="window.location.href = './contact.html'">Contáctanos</button>
+                                </ul>
+                            </nav>
+                            <!-- End Mainmanu Nav -->
+                        </div>
                     </div>
-                    </div>
-                    <ul class="mainmenu">
-                    <li class="menu-item-has-children">
-                        <a href="javascript:void(0);">BTL</a>
-                        <ul class="axil-submenu">
-                        <li><a href="#">Volanteo</a></li>
-                        <li><a href="#">Imp. a gran escala</a></li>
-                        <li><a href="#">Otros Servicios</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="javascript:void(0);">ATL</a>
-                        <ul class="axil-submenu">
-                        <li><a href="#">Vallas</a></li>
-                        <li><a href="#">Radio</a></li>
-                        <li><a href="#">Televisión</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="javascript:void(0);">Portfolio</a>
-                        <ul class="axil-submenu">
-                        <li><a href="#">Proyectos Volanteo</a></li>
-                        <li><a href="#">Otros Proyectos</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children">
-                        <a href="javascript:void(0);">Blog</a>
-                        <ul class="axil-submenu">
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Últimas Noticias</a></li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="services.html">Servicios</a>
-                    </li>
-                    <li><a href="contact.html">Contáctanos</a></li>
-                    </ul>
-                </nav>
-                </div>
-                <div class="header-action">
-                <ul class="list-unstyled">
-                    <li class="header-btn">
-                    <a href="team.html" class="axil-btn btn-fill-white">CONÓCENOS MÁS</a>
-                    </li>
-                    <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
-                    <button class="btn-wrap btn-dark" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                    </li>
-                    <li class="my_switcher d-block d-lg-none">
-                    <ul>
-                        <li title="Light Mode">
-                        <a href="javascript:void(0)" class="setColor light" data-theme="light">
-                            <i class="fal fa-lightbulb-on"></i>
-                        </a>
-                        </li>
-                        <li title="Dark Mode">
-                        <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
-                            <i class="fas fa-moon"></i>
-                        </a>
-                        </li>
-                    </ul>
-                    </li>
-                </ul>
                 </div>
             </div>
-            </div>
-        </div>
         </header>
 
         <!-- Banner -->
