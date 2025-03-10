@@ -1,0 +1,570 @@
+    <!DOCTYPE html>
+    <html class="no-js" lang="es">
+    <head>
+    <!-- Meta Data -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Servicio de Volanteo y BTL - Publicidad Innovadora</title>
+    <meta name="description" content="Ofrecemos servicio de volanteo y BTL con soluciones publicitarias innovadoras para potenciar tu marca.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.jpg">
+    <link rel="stylesheet" href="assets/css/vendor/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="./Volanteo_logica/style.css">
+    <link rel="stylesheet" href="assets/css/vendor/font-awesome.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick.css">
+    <link rel="stylesheet" href="assets/css/vendor/slick-theme.css">
+    <link rel="stylesheet" href="assets/css/vendor/sal.css">
+    <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/vendor/green-audio-player.min.css">
+    <link rel="stylesheet" href="assets/css/vendor/odometer-theme-default.css">
+    <!--CDN de leflet-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <!-- Site Stylesheet -->
+    <link rel="stylesheet" href="assets/css/app.css">
+    <style>
+        /* Contenedor responsive para el mapa de Leaflet */
+        .map-responsive {
+        overflow: hidden;
+        padding-bottom: 56.25%;
+        position: relative;
+        height: 0;
+        }
+        .map-responsive #leaflet-map {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Carga de la API de reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LefM9wqAAAAAEDFD1OQOXD-HYhEc2_Q_0BYVkjU" async defer></script>
+    <script src="./assets/js/Recaptcha/confirmacion.js"></script>
+    <script src="./assets/js/Recaptcha/validacion.js"></script>
+    </head>
+    <body class="sticky-header">
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">Estás usando un <strong>navegador desactualizado</strong>. Por favor <a href="https://browsehappy.com/">actualiza tu navegador</a> para mejorar tu experiencia y seguridad.</p>
+    <![endif]-->
+    <a href="#main-wrapper" id="backto-top" class="back-to-top">
+        <i class="far fa-angle-double-up"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <div class="my_switcher d-none d-lg-block">
+        <ul>
+        <li title="Light Mode">
+            <a href="javascript:void(0)" class="setColor light" data-theme="light">
+            <i class="fal fa-lightbulb-on"></i>
+            </a>
+        </li>
+        <li title="Dark Mode">
+            <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+            <i class="fas fa-moon"></i>
+            </a>
+        </li>
+        </ul>
+    </div>
+
+    <div id="main-wrapper" class="main-wrapper">
+        <!-- Header -->
+        <header class="header axil-header header-style-4" style="height: 120px;">
+        <div id="axil-sticky-placeholder"></div>
+        <div class="axil-mainmenu">
+            <div class="container">
+            <div class="header-navbar">
+                <div class="header-logo">
+                <a href="index.html"><img src="./assets/media/logo-blanco-bagu.png" alt="logo" style="width: 100px;"></a>
+                </div>
+                <div class="header-main-nav">
+                <!-- Menú principal -->
+                <nav class="mainmenu-nav" id="mobilemenu-popup">
+                    <div class="d-block d-lg-none">
+                    <div class="mobile-nav-header">
+                        <div class="mobile-nav-logo">
+                        <a href="index.html">
+                            <img class="light-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
+                            <img class="dark-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
+                        </a>
+                        </div>
+                        <button class="mobile-menu-close" data-bs-dismiss="offcanvas"><i class="fas fa-times"></i></button>
+                    </div>
+                    </div>
+                    <ul class="mainmenu">
+                    <li class="menu-item-has-children">
+                        <a href="javascript:void(0);">BTL</a>
+                        <ul class="axil-submenu">
+                        <li><a href="#">Volanteo</a></li>
+                        <li><a href="#">Imp. a gran escala</a></li>
+                        <li><a href="#">Otros Servicios</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="javascript:void(0);">ATL</a>
+                        <ul class="axil-submenu">
+                        <li><a href="#">Vallas</a></li>
+                        <li><a href="#">Radio</a></li>
+                        <li><a href="#">Televisión</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="javascript:void(0);">Portfolio</a>
+                        <ul class="axil-submenu">
+                        <li><a href="#">Proyectos Volanteo</a></li>
+                        <li><a href="#">Otros Proyectos</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="javascript:void(0);">Blog</a>
+                        <ul class="axil-submenu">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Últimas Noticias</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="services.html">Servicios</a>
+                    </li>
+                    <li><a href="contact.html">Contáctanos</a></li>
+                    </ul>
+                </nav>
+                </div>
+                <div class="header-action">
+                <ul class="list-unstyled">
+                    <li class="header-btn">
+                    <a href="team.html" class="axil-btn btn-fill-white">CONÓCENOS MÁS</a>
+                    </li>
+                    <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
+                    <button class="btn-wrap btn-dark" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    </li>
+                    <li class="my_switcher d-block d-lg-none">
+                    <ul>
+                        <li title="Light Mode">
+                        <a href="javascript:void(0)" class="setColor light" data-theme="light">
+                            <i class="fal fa-lightbulb-on"></i>
+                        </a>
+                        </li>
+                        <li title="Dark Mode">
+                        <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+                            <i class="fas fa-moon"></i>
+                        </a>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+        </header>
+
+        <!-- Banner -->
+        <section class="banner banner-style-3">
+        <video autoplay muted loop playsinline class="background-video">
+            <source src="./assets/media/import/VIDEO/Banner Web.mp4" type="video/mp4" alt="Video fondo">
+        </video>
+        <div class="container">
+            <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="banner-content">
+                <span class="subtitle" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">Publicidad Innovadora</span>
+                <h1 class="title" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">Servicio de Volanteo y BTL</h1>
+                <p data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300">
+                    Impulsamos tu marca con estrategias de volanteo y acciones BTL que conectan de forma directa y efectiva con tu audiencia.
+                </p>
+                <div class="btn-group" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="400">
+                    <a href="contact.html" class="axil-btn btn-fill-primary btn-large">Solicitar Cotización</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="banner-thumbnail">
+                <div class="large-thumb" data-sal="slide-up" data-sal-duration="800" data-sal-delay="500">
+                    <!-- Imagen representativa del volanteo -->
+                    <img class="paralax-image" src="./images/volanteo/volanteo-principal.webp" alt="Servicio de Volanteo">
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <ul class="list-unstyled shape-group-20">
+            <li class="shape shape-1" data-sal="slide-down" data-sal-duration="500" data-sal-delay="100">
+            <img src="assets/media/others/bubble-32.png" alt="Bubble">
+            </li>
+            <li class="shape shape-2" data-sal="slide-left" data-sal-duration="500" data-sal-delay="200">
+            <img src="assets/media/others/bubble-33.png" alt="Bubble">
+            </li>
+            <li class="shape shape-4" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
+            <img src="assets/media/others/bubble-14.png" alt="Bubble">
+            </li>
+            <li class="shape shape-5" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
+            <img src="assets/media/others/bubble-4.png" alt="Bubble">
+            </li>
+            <li class="shape shape-6" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
+            <img src="assets/media/others/bubble-30.png" alt="Bubble">
+            </li>
+            <li class="shape shape-7" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
+            <img src="assets/media/others/bubble-31.png" alt="Bubble">
+            </li>
+        </ul>
+        </section>
+
+        <!-- Sección de Proceso y Descripción -->
+        <section class="section section-padding bg-color-dark">
+        <div class="container">
+            <div class="section-heading heading-light-left">
+            <span class="subtitle">Nuestro Proceso</span>
+            <h2 class="title">Del Diseño a la Distribución</h2>
+            <p>
+                Te acompañamos en cada paso: consultoría, diseño creativo, distribución estratégica y seguimiento para maximizar el impacto de tu campaña.
+            </p>
+            </div>
+            <div class="row">
+            <div class="col-md-3" data-sal="slide-up" data-sal-duration="800">
+                <div class="service-process">
+                <h3>Paso 1</h3>
+                <img src="./images/volanteo/consultoria.webp" class="img-fluid" alt="Consultoría y Estrategia">
+                <p>Consultoría y Estrategia</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="100">
+                <div class="service-process">
+                <h3>Paso 2</h3>
+                <img src="./images/volanteo/diseno.webp" class="img-fluid" alt="Diseño y Creación">
+                <p>Diseño y Creación de Materiales</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+                <div class="service-process">
+                <h3>Paso 3</h3>
+                <img src="./images/volanteo/distribucion.webp" class="img-fluid" alt="Distribución">
+                <p>Distribución Efectiva</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="300">
+                <div class="service-process">
+                <h3>Paso 4</h3>
+                <img src="./images/volanteo/seguimiento.webp" class="img-fluid" alt="Seguimiento">
+                <p>Seguimiento y Resultados</p>
+                </div>
+            </div>
+            </div>
+            <div class="small-text" style="margin-top: 20px; font-size: 0.8rem; text-align: center; color: #ccc;">
+            Nota: Servicio a nivel nacional.
+            </div>
+        </div>
+        </section>
+
+        <!-- Proyectos / Portafolio -->
+        <section class="section section-padding-equal bg-color-light">
+        <div class="container">
+            <div class="section-heading heading-left">
+            <span class="subtitle">Nuestros Proyectos</span>
+            <h2 class="title">Ejemplos de Volanteo</h2>
+            <p>Descubre algunos de nuestros trabajos que destacan la efectividad y creatividad en nuestras campañas de volanteo.</p>
+            </div>
+            <div class="row row-45">
+            <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
+                <div class="project-grid project-style-2">
+                <div class="thumbnail">
+                    <a href="contact.html">
+                    <!-- Imagen representativa de una campaña de volanteo -->
+                    <img src="./images/volanteo/volanteo-1.webp" alt="Campaña de Volanteo 1">
+                    </a>
+                </div>
+                <div class="content">
+                    <span class="subtitle" style="color: white;">Campaña Impactante</span>
+                    <h3 class="title" style="color: white;"><a href="contact.html">Volanteo Creativo</a></h3>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+                <div class="project-grid project-style-2">
+                <div class="thumbnail">
+                    <a href="contact.html">
+                    <!-- Imagen representativa de otra campaña de volanteo -->
+                    <img src="./images/volanteo/volanteo-2.webp" alt="Campaña de Volanteo 2">
+                    </a>
+                </div>
+                <div class="content">
+                    <span class="subtitle" style="color: #E62168;">Volanteo Estratégico</span>
+                    <h3 class="title" style="color: #E62168;"><a href="contact.html">Alcance Amplio</a></h3>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Contacto -->
+        <section class="section-padding bg-color-dark">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000">
+                <div class="contact-address mb--30">
+                <div class="section-heading heading-light-left">
+                    <span class="subtitle">Contáctanos</span>
+                    <h2 class="title">¿Listo para impulsar tu marca?</h2>
+                </div>
+                <div class="address-list">
+                    <div class="address">
+                    <h6 class="title">Correo</h6>
+                    <p><a href="mailto:contacto@volanteobtl.com">contacto@volanteobtl.com</a></p>
+                    </div>
+                    <div class="address">
+                    <h6 class="title">Dirección</h6>
+                    <p>Calle Ejemplo #123, Ciudad</p>
+                    </div>
+                    <div class="address">
+                    <h6 class="title">Teléfono</h6>
+                    <p><a href="tel:+57123456789">+57 123 456789</a></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">
+                <div class="contact-form-box mb--30">
+                <h3 class="title">Escríbenos tu consulta</h3>
+                <form method="POST" action="./src/contact_home.php" id="form_volanteo">
+                    <dotlottie-player
+                    src="https://lottie.host/acc07c23-ceaf-4c39-8465-c07a00ddd011/s3K5a5xpql.lottie"
+                    background="transparent"
+                    speed="1"
+                    id="lottie_carga"
+                    style="width: 280px; height: 280px; z-index: 18; margin: auto; display: none;"
+                    loop
+                    autoplay
+                    ></dotlottie-player>
+                    <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                    <label>Correo</label>
+                    <input type="email" class="form-control" name="correo" placeholder="ejemplo@mail.com" required>
+                    </div>
+                    <div class="form-group mb--40" id="grupo_numero">
+                    <label>Número</label>
+                    <input type="tel" class="form-control" name="numero" placeholder="Número de celular o teléfono fijo" id="num_colombia" pattern="^(3\d{9}|(60[1-8])?\d{7})$" required>
+                    <p id="texto_numero" style="display: none; background-color: #E62168; color: white; border-radius: 50px; padding: 7px; margin: 5px; text-align: center;">El número ingresado no es válido</p>
+                    </div>
+                    <div class="form-group">
+                    <label for="servicio">Servicio de interés</label>
+                    <select name="servicio" id="servicios" class="form-control" required>
+                        <option value="Volanteo y BTL">Volanteo y BTL</option>
+                        <option value="ATL">ATL (Vallas, Televisión o Radio)</option>
+                        <option value="Otros">Otros Servicios</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Cuéntanos más sobre lo que deseas</label>
+                    <textarea class="form-control" name="informacion" id="informacio_usuario" rows="4" required></textarea>
+                    </div>
+                    <!-- Campo oculto para el token de reCAPTCHA -->
+                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                    <div class="form-group">
+                    <button type="submit" class="axil-btn btn-borderd btn-fluid btn-primary mt-3" id="button_enviar">CONTÁCTANOS AHORA</button>
+                    <button class="btn btn-warning" type="button" id="spinner_contact" style="display: none;" disabled>
+                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                        <span role="status">Cargando...</span>
+                    </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Sección del Mapa (Leaflet) -->
+        <section style="padding: 25px;">
+        <div class="container">
+            <div>
+            <span class="subtitle">Planifica tu campaña</span>
+            <h2 class="title">Planifica tu campaña con nuestra base de datos</h2>
+                <form id="volanteoForm">
+                    <select name="localidad" id="localidad" class="form-control form-control-lg">
+                        <option value="" disabled selected>Seleccione una localidad</option>
+                        <option value="localidad usaquén">Localidad Usaquén</option>
+                        <option value="localidad chapinero">Localidad Chapinero</option>
+                        <option value="localidad santa fe">Localidad Santa Fe</option>
+                        <option value="localidad san cristóbal">Localidad San Cristóbal</option>
+                        <option value="localidad usme">Localidad Usme</option>
+                        <option value="localidad tunjuelito">Localidad Tunjuelito</option>
+                        <option value="localidad bosa">Localidad Bosa</option>
+                        <option value="localidad kennedy">Localidad Kennedy</option>
+                        <option value="localidad fontibón">Localidad Fontibón</option>
+                        <option value="localidad engativá">Localidad Engativá</option>
+                        <option value="localidad suba">Localidad Suba</option>
+                        <option value="localidad barrios unidos">Localidad Barrios Unidos</option>
+                        <option value="localidad teusaquillo">Localidad Teusaquillo</option>
+                        <option value="localidad los mártires">Localidad Los Mártires</option>
+                        <option value="localidad antonio nariño">Localidad Antonio Nariño</option>
+                        <option value="localidad puente aranda">Localidad Puente Aranda</option>
+                        <option value="localidad la candelaria">Localidad La Candelaria</option>
+                        <option value="localidad rafael uribe uribe">Localidad Rafael Uribe Uribe</option>
+                        <option value="localidad ciudad bolívar">Localidad Ciudad Bolívar</option>
+                        <option value="localidad sumapaz">Localidad Sumapaz</option>
+                    </select>
+                    
+                    
+                
+                    <!-- Input de rango para número de volanteadores -->
+                    <div class="mb-3">
+                    <label for="volanteadores" class="form-label">
+                        Número de Volanteadores: <span id="volanteadoresValue">1</span>
+                    </label>
+                    <input
+                        type="range"
+                        class="form-range"
+                        id="volanteadores"
+                        name="volanteadores"
+                        min="1"
+                        max="12"
+                        value="1"
+                        required>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success btn-lg">Simular volanteo</button>
+                </form>
+                <div id="resultado">
+                    <!--Mostramos los datos de la base de datos en caso de error -->
+                </div>
+                <div id="resultadoCheck">
+                    <div class="valores_resultado">
+                        <p class="valores">TITULO DE LOCALIDAD : </p>
+                        <p class="resultado" id="resultadoTitulo">En espera</p>
+                    </div>
+                    <div class="valores_resultado">
+                        <p class="valores" id="valorVolanteador">EFECTIVIDAD : </p>
+                        <p class="resultado" id="resultadoEfectividad">0%</p>
+                    </div>
+                    <div class="valores_resultado">
+                        <p class="valores">VOLANTES RECOMENDADOS POR DIA : </p>
+                        <p class="resultado" id="resultadoVolantes">En espera</p>
+                    </div>
+                    <div class="valores_resultado">
+                        <p class="valores">Descripcion de la zona: </p>
+                        <p class="resultado" id="resultadoDescripcion">En espera</p>
+                    </div>
+                </div>
+            </div>
+            <div>
+            <div style="width: 100%; height: auto; margin: 30px 0px;">
+                <p class="TitleMapa">ZONA DE EJECUCION : </p>
+                <!-- El mapa de Leaflet se integrará aquí -->
+                <div id="map" style="width: 100%; height: 500px; border-radius: 25px;"></div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer-area footer-dark">
+        <div class="container">
+            <div class="footer-bottom" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100">
+            <div class="row">
+                <div class="col-md-6">
+                <div class="footer-copyright">
+                    <span class="copyright-text">© 2025. Todos los derechos reservados por Volanteo BTL.</span>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="footer-bottom-link">
+                    <ul class="list-unstyled">
+                    <li><a href="privacy-policy.html">Política de Privacidad</a></li>
+                    <li><a href="terms-of-use.html">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </footer>
+
+        <!-- Offcanvas Menu -->
+        <div class="offcanvas offcanvas-end header-offcanvasmenu" tabindex="-1" id="offcanvasMenuRight">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form action="#" class="side-nav-search-form">
+            <div class="form-group">
+                <input type="text" class="search-field" name="search-field" placeholder="Buscar...">
+                <button class="side-nav-search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            </form>
+            <div class="row">
+            <div class="col-lg-5 col-xl-6">
+                <ul class="main-navigation list-unstyled">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="portfolio.html">Portafolio</a></li>
+                <li><a href="about-us.html">Nosotros</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-7 col-xl-6">
+                <div class="contact-info-wrap">
+                <div class="contact-inner">
+                    <address class="address">
+                    <span class="title">Información de Contacto</span>
+                    <p>Calle 123, Bogotá, Colombia</p>
+                    </address>
+                    <address class="address">
+                    <span class="title">Llámanos 24/7</span>
+                    <a class="tel" href="tel:+57123456789"><i class="fas fa-phone"></i>+57 123 456789</a>
+                    </address>
+                </div>
+                <div class="contact-inner">
+                    <h5 class="title">Encuéntranos aquí</h5>
+                    <div class="contact-social-share">
+                    <ul class="social-share list-unstyled">
+                        <li><a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/"><i class="fab fa-x-twitter"></i></a></li>
+                        <li><a href="https://www.behance.net/"><i class="fab fa-behance"></i></a></li>
+                        <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+    <script src="./Volanteo_logica/inicializador_map.js"></script>
+    <script src="./Volanteo_logica/actalizarFormulario.js"></script>
+    <script src="./Volanteo_logica/procesador_formulario_volanteador.js"></script>
+    <script src="./assets/js/index.js"></script>
+    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/vendor/bootstrap.min.js"></script>
+    <script src="assets/js/vendor/isotope.pkgd.min.js"></script>
+    <script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="assets/js/vendor/odometer.min.js"></script>
+    <script src="assets/js/vendor/jquery-appear.js"></script>
+    <script src="assets/js/vendor/slick.min.js"></script>
+    <script src="assets/js/vendor/sal.js"></script>
+    <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/vendor/js.cookie.js"></script>
+    <script src="assets/js/vendor/jquery.style.switcher.js"></script>
+    <script src="assets/js/vendor/jquery.countdown.min.js"></script>
+    <script src="assets/js/vendor/tilt.js"></script>
+    <script src="assets/js/vendor/green-audio-player.min.js"></script>
+    <script src="assets/js/vendor/jquery.nav.js"></script>
+    <script src="assets/js/app.js"></script>
+    </body>
+    </html>

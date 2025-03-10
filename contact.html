@@ -106,15 +106,13 @@
         <!--=====================================-->
         <!--=        Header Area Start       	=-->
         <!--=====================================-->
-        <header class="header axil-header header-style-1">
+        <header class="header axil-header header-style-4" style="height: 120px;">
             <div id="axil-sticky-placeholder"></div>
             <div class="axil-mainmenu">
                 <div class="container">
                     <div class="header-navbar">
                         <div class="header-logo">
-                            <a href="index.html"><img class="light-version-logo" src="./assets/media/logo-blanco-bagu.png" alt="logo" style="width: 90px;"></a>
-                            <a href="index.html"><img class="dark-version-logo" src="./assets/media/logo-blanco-bagu.png" alt="logo" style="width: 90px;"></a>
-                            <a href="index.html"><img class="sticky-logo" src="./assets/media/logo-blanco-bagu.png" alt="logo" style="width: 90px;"></a>
+                            <a href="index.html"><img src="./assets/media/logo-blanco-bagu.png" alt="logo" style="width: 100px;"></a>
                         </div>
                         <div class="header-main-nav">
                             <!-- Start Mainmanu Nav -->
@@ -134,38 +132,41 @@
                                     <li class="menu-item-has-children">
                                         <a href="javascript:void(0);">BTL</a>
                                         <ul class="axil-submenu">
-                                            <li><a href="./404.html">Volanteo</a></li>
-                                            <li><a href="./404.html">Impresion a gran escala</a></li>
-                                            <li><a href="./404.html">Carro valla</a></li>
-                                            <li><a href="./404.html">Moto valla</a></li>
-                                            <li><a href="./404.html">Pop man led holografico</a></li>
+                                            <li><a href="#">Volanteo</a></li>
+                                            <li><a href="./Dtf_impresiones.html">Impresion a gran escala</a></li>
+                                            <li><a href="./Carro_valla.html">Carro valla</a></li>
+                                            <li><a href="#">Moto valla</a></li>
+                                            <li><a href="#">Pop man led holografico</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="javascript:void(0);">ATL</a>
                                         <ul class="axil-submenu">
-                                            <li><a href="./404.html">Transmilenio</a></li>
-                                            <li><a href="./404.html">Radio</a></li>
-                                            <li><a href="./404.html">Television</a></li>
+                                            <li><a href="#">Transmilenio</a></li>
+                                            <li><a href="#">Radio</a></li>
+                                            <li><a href="#">Television</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="javascript:void(0);">Portfolio</a>
                                         <ul class="axil-submenu">
-                                            <li><a href="./crispetera.html">Alquiler de crispeteras</a></li>
-                                            <li><a href="./404.html">Transmilenio</a></li>
-                                            <li><a href="./404.html">Push multimedia</a></li>
-                                            <li><a href="./404.html">Volanteo</a></li>
-                                            <li><a href="./404.html">Creacion de paginas web</a></li>
-                                            <li><a href="./404.html">Carros valla </a></li>
+                                            <li><a href="./crispetera.html">Alquiler de crispetera</a></li>
+                                            <li><a href="#">Transmilenio</a></li>
+                                            <li><a href="#">Push multimedia</a></li>
+                                            <li><a href="#">Volanteo</a></li>
+                                            <li><a href="#">Creacion de paginas web</a></li>
+                                            <li><a href="./Carro_valla.html">Carros valla </a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children">
                                         <a href="javascript:void(0);">Blog</a>
                                         <ul class="axil-submenu">
-                                            <li><a href="./404.html">Blog</a></li>
-                                            <li><a href="./404.html">Ultima noticia</a></li>
+                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="#">Ultima noticia</a></li>
                                         </ul>
+                                    </li>
+                                    <li>
+                                        <a href="./Dtf_impresiones.html">DTF impresiones</a>
                                     </li>
                                     <li><a href="./contact.html">Contactanos</a></li>
                                 </ul>
@@ -174,15 +175,11 @@
                         </div>
                         <div class="header-action">
                             <ul class="list-unstyled">
-                                <li class="sidemenu-btn d-lg-block d-none">
-                                    <button class="btn-wrap" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenuRight">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
+                                <li class="header-btn">
+                                    <a href="./team.html" class="axil-btn btn-fill-white">CONOCENOS MAS</a>
                                 </li>
                                 <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
-                                    <button class="btn-wrap" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
+                                    <button class="btn-wrap btn-dark" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
                                         <span></span>
                                         <span></span>
                                         <span></span>
@@ -278,7 +275,7 @@
                                 </div>
                                 <div class="form group">
                                     <label>Cuentanos mas sobre lo que deseas</label>
-                                    <textarea class="form-control" name="informacion" id="informacio_usuario" rows="4"></textarea>
+                                    <textarea class="form-control" name="informacion" id="informacio_usuario" rows="4" required></textarea>
                                 </div>
                                 <!-- Campo oculto para el token de reCAPTCHA -->
                                 <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">

@@ -1,0 +1,104 @@
+/* Estiliza el formulario */
+#volanteoForm {
+    margin: 20px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+/* Configuración del grid */
+#resultadoCheck {
+    width: 100%;
+    height: auto;
+    margin: 15px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas */
+    grid-template-rows: auto auto;
+    gap: 16px; /* Espacio mejorado */
+    padding: 15px;
+}
+
+/* Estilo de cada elemento del grid */
+.valores_resultado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo con transparencia */
+    text-align: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.valores_resultado:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Hace que el último elemento ocupe las 3 columnas */
+.valores_resultado:last-child {
+    grid-column: span 3;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo del texto del resultado */
+.resultado {
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Estilo para el titulo del mapa*/
+.TitleMapa{
+    font-size: 35px;
+    font-weight: bold;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+    /* Reduce a 2 columnas */
+    #resultadoCheck {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Último elemento también ocupa 2 columnas */
+    .valores_resultado:last-child {
+        grid-column: span 2;
+    }
+
+    /* Estilo para el titulo del mapa*/
+    .TitleMapa{
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+
+@media (max-width: 768px) {
+    /* En móviles, 1 columna */
+    #resultadoCheck {
+        grid-template-columns: 1fr;
+    }
+
+    /* Último elemento también 1 columna */
+    .valores_resultado:last-child {
+        grid-column: span 1;
+    }
+
+    /* Reducir tamaño de fuente en móviles */
+    .resultado {
+        font-size: 28px;
+    }
+    /* Estilo para el titulo del mapa*/
+    .TitleMapa{
+        font-size: 20px;
+        font-weight: bold;
+    }
+}
+
+
+
