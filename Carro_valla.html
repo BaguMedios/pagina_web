@@ -1,13 +1,43 @@
-<!DOCTYPE html>
-<html class="no-js" lang="es">
-
-<head>
+    <!DOCTYPE html>
+    <html class="no-js" lang="es">
+    <head>
     <!-- Meta Data -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Publicidad en Carro Valla | Impresión de Lonas y Carro Valla LED</title>
     <meta name="description" content="Ofrecemos soluciones integrales de publicidad en carro valla en Colombia: impresión de lonas de alta calidad y opción Carro Valla LED para atraer a tus clientes. Proceso ágil y completo. (Nota: ciertos departamentos no tienen cobertura)">
+    <meta name="keywords" content="carro valla, impresión de lonas, carro valla LED, publicidad en carro valla, publicidad, Colombia">
+    <meta name="robots" content="index, follow">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="canonical" href="https://bagumedios.com/carro_valla.html">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Bagu Medios SAS",
+        "url": "https://bagumedios.com/carro_valla.html",
+        "logo": "https://bagumedios.com/assets/media/logo.png",
+        "image": "https://bagumedios.com/assets/media/carro-valla.jpg",
+        "telephone": "+57 319 7928459",
+        "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle 106 a #54-27",
+        "addressLocality": "Bogotá",
+        "addressCountry": "CO"
+        },
+        "description": "Publicidad en Carro Valla e impresión de lonas de alta calidad, con opción de Carro Valla LED para maximizar la visibilidad de tu marca en Colombia.",
+        "openingHours": "Mo-Fr 08:00-18:00",
+        "priceRange": "$$",
+        "sameAs": [
+        "https://www.facebook.com/BaguMedios",
+        "https://www.instagram.com/BaguMedios",
+        "https://www.linkedin.com/company/bagumedios"
+        ]
+    }
+    </script>
+    
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="assets/media/favicon.jpg">
     <link rel="stylesheet" href="assets/css/vendor/bootstrap.rtl.min.css">
@@ -18,476 +48,485 @@
     <link rel="stylesheet" href="assets/css/vendor/magnific-popup.css">
     <link rel="stylesheet" href="assets/css/vendor/green-audio-player.min.css">
     <link rel="stylesheet" href="assets/css/vendor/odometer-theme-default.css">
+    <link rel="stylesheet" href="./home_logica/animacionHeader.css">
+    <link rel="stylesheet" href="./home_logica/menu.css">
     <!-- Site Stylesheet -->
     <link rel="stylesheet" href="assets/css/app.css">
-
+    <!-- CDN de Leaflet (solo se carga si es necesario en otras páginas) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+            integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+            crossorigin=""/>
+    <style>
+        /* Uniformidad en las imágenes de la sección de proceso */
+        .service-process img {
+        width: 100%;
+        height: 250px; /* Altura fija para los pasos */
+        object-fit: cover;
+        border-radius: 8px;
+        }
+        /* Para las imágenes de los ejemplos (portfolio) se mantienen sin altura fija */
+        .project-grid .thumbnail img {
+        width: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+        }
+    </style>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
-    <!-- Carga de la API de reCAPTCHA en el head -->
+    <!-- Carga de la API de reCAPTCHA -->
     <script src="https://www.google.com/recaptcha/api.js?render=6LefM9wqAAAAAEDFD1OQOXD-HYhEc2_Q_0BYVkjU" async defer></script>
     <script src="./assets/js/Recaptcha/confirmacion.js"></script>
-    <!--script validaciones de formulario-->
     <script src="./assets/js/Recaptcha/validacion.js"></script>
-</head>
+    </head>
+    <body class="sticky-header">
+    <!-- Eliminado el botón flotante "Simula tu campaña" -->
 
-<body class="sticky-header">
-    <!--[if lte IE 9]>
-      <p class="browserupgrade">Estás usando un <strong>navegador desactualizado</strong>. Por favor <a href="https://browsehappy.com/">actualiza tu navegador</a> para mejorar tu experiencia y seguridad.</p>
-    <![endif]-->
     <a href="#main-wrapper" id="backto-top" class="back-to-top">
         <i class="far fa-angle-double-up"></i>
     </a>
 
-    <!-- Preloader Start Here -->
+    <!-- Preloader -->
     <div id="preloader"></div>
-    <!-- Preloader End Here -->
 
     <div class="my_switcher d-none d-lg-block">
         <ul>
-            <li title="Light Mode">
-                <a href="javascript:void(0)" class="setColor light" data-theme="light">
-                    <i class="fal fa-lightbulb-on"></i>
-                </a>
-            </li>
-            <li title="Dark Mode">
-                <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
-                    <i class="fas fa-moon"></i>
-                </a>
-            </li>
+        <li title="Light Mode">
+            <a href="javascript:void(0)" class="setColor light" data-theme="light">
+            <i class="fal fa-lightbulb-on"></i>
+            </a>
+        </li>
+        <li title="Dark Mode">
+            <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+            <i class="fas fa-moon"></i>
+            </a>
+        </li>
         </ul>
     </div>
 
     <div id="main-wrapper" class="main-wrapper">
-
         <!--=====================================-->
-        <!--=        Header Area Start       	=-->
+        <!--=        Header Area Start        =-->
         <!--=====================================-->
         <header class="header axil-header header-style-4" style="height: 120px;">
-            <div id="axil-sticky-placeholder"></div>
-            <div class="axil-mainmenu">
-                <div class="container">
-                    <div class="header-navbar">
-                        <div class="header-logo">
-                            <a href="index.html"><img src="./assets/media/logo-blanco-bagu.png" alt="logo" style="width: 100px;"></a>
-                        </div>
-                        <div class="header-main-nav">
-                            <!-- Start Mainmanu Nav -->
-                            <nav class="mainmenu-nav" id="mobilemenu-popup">
-                                <div class="d-block d-lg-none">
-                                    <div class="mobile-nav-header">
-                                        <div class="mobile-nav-logo">
-                                            <a href="index.html">
-                                                <img class="light-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
-                                                <img class="dark-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
-                                            </a>
-                                        </div>
-                                        <button class="mobile-menu-close" data-bs-dismiss="offcanvas"><i class="fas fa-times"></i></button>
-                                    </div>
-                                </div>
-                                <ul class="mainmenu">
-                                    <li class="menu-item-has-children">
-                                        <a href="javascript:void(0);">BTL</a>
-                                        <ul class="axil-submenu">
-                                            <li><a href="#">Volanteo</a></li>
-                                            <li><a href="./Dtf_impresiones.html">Impresion a gran escala</a></li>
-                                            <li><a href="./Carro_valla.html">Carro valla</a></li>
-                                            <li><a href="#">Moto valla</a></li>
-                                            <li><a href="#">Pop man led holografico</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="javascript:void(0);">ATL</a>
-                                        <ul class="axil-submenu">
-                                            <li><a href="#">Transmilenio</a></li>
-                                            <li><a href="#">Radio</a></li>
-                                            <li><a href="#">Television</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="javascript:void(0);">Portfolio</a>
-                                        <ul class="axil-submenu">
-                                            <li><a href="./crispetera.html">Alquiler de crispetera</a></li>
-                                            <li><a href="#">Transmilenio</a></li>
-                                            <li><a href="#">Push multimedia</a></li>
-                                            <li><a href="#">Volanteo</a></li>
-                                            <li><a href="#">Creacion de paginas web</a></li>
-                                            <li><a href="./Carro_valla.html">Carros valla </a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="javascript:void(0);">Blog</a>
-                                        <ul class="axil-submenu">
-                                            <li><a href="#">Blog</a></li>
-                                            <li><a href="#">Ultima noticia</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="./Dtf_impresiones.html">DTF impresiones</a>
-                                    </li>
-                                    <li><a href="./contact.html">Contactanos</a></li>
-                                </ul>
-                            </nav>
-                            <!-- End Mainmanu Nav -->
-                        </div>
-                        <div class="header-action">
-                            <ul class="list-unstyled">
-                                <li class="header-btn">
-                                    <a href="./team.html" class="axil-btn btn-fill-white">CONOCENOS MAS</a>
-                                </li>
-                                <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
-                                    <button class="btn-wrap btn-dark" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
-                                        <span></span>
-                                        <span></span>
-                                        <span></span>
-                                    </button>
-                                </li>
-                                <li class="my_switcher d-block d-lg-none">
-                                    <ul>
-                                        <li title="Light Mode">
-                                            <a href="javascript:void(0)" class="setColor light" data-theme="light">
-                                                <i class="fal fa-lightbulb-on"></i>
-                                            </a>
-                                        </li>
-                                        <li title="Dark Mode">
-                                            <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
-                                                <i class="fas fa-moon"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!--=====================================-->
-        <!--=        Banner Area Start          =-->
-        <!--=====================================-->
-        <section class="banner banner-style-3">
-            <video autoplay muted loop playsinline class="background-video">
-                <source src="./assets/media/import/VIDEO/Banner Web.mp4" type="video/mp4" alt="Video fondo">
-            </video>
+        <div id="axil-sticky-placeholder"></div>
+        <div class="axil-mainmenu">
             <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-6">
-                        <div class="banner-content">
-                            <span class="subtitle" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">Publicidad Integral</span>
-                            <h1 class="title" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">Publicidad en Carro Valla</h1>
-                            <p data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300">
-                                Soluciones completas: desde la impresión de lonas de alta calidad para carro valla hasta la opción Carro Valla LED que capta la atención de tus clientes.
-                            </p>
-                            <div class="btn-group" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="400">
-                                <a href="contact.html" class="axil-btn btn-fill-primary btn-large">Solicitar Cotización</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="banner-thumbnail">
-                            <div class="large-thumb" data-sal="slide-up" data-sal-duration="800" data-sal-delay="500">
-                                <!-- Reemplaza con la imagen representativa de publicidad en carro valla -->
-                                <img class="paralax-image" src="./images/carro_valla/carro-valla-principal.webp" alt="Publicidad en Carro Valla">
-                            </div>
-                        </div>
-                    </div>
+            <div class="header-navbar">
+                <div class="header-logo">
+                <a href="index.html">
+                    <img src="./assets/media/logo-blanco-bagu.png" alt="Logo" style="width: 100px;">
+                </a>
                 </div>
-            </div>
-            <ul class="list-unstyled shape-group-20">
-                <li class="shape shape-1" data-sal="slide-down" data-sal-duration="500" data-sal-delay="100">
-                    <img src="assets/media/others/bubble-32.png" alt="Bubble">
-                </li>
-                <li class="shape shape-2" data-sal="slide-left" data-sal-duration="500" data-sal-delay="200">
-                    <img src="assets/media/others/bubble-33.png" alt="Bubble">
-                </li>
-                <li class="shape shape-4" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
-                    <img src="assets/media/others/bubble-14.png" alt="Bubble">
-                </li>
-                <li class="shape shape-5" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
-                    <img src="assets/media/others/bubble-4.png" alt="Bubble">
-                </li>
-                <li class="shape shape-6" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
-                    <img src="assets/media/others/bubble-30.png" alt="Bubble">
-                </li>
-                <li class="shape shape-7" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
-                    <img src="assets/media/others/bubble-31.png" alt="Bubble">
-                </li>
-            </ul>
-        </section>
-        <!--=====================================-->
-        <!--=        Sección de Proceso y Descripción         =-->
-        <!--=====================================-->
-        <section class="section section-padding bg-color-dark">
-            <div class="container">
-                <div class="section-heading heading-light-left">
-                    <span class="subtitle">Nuestro Proceso</span>
-                    <h2 class="title">Publicidad en Carro Valla de principio a fin</h2>
-                    <p>
-                        Con nosotros, el proceso es sencillo y ágil: nos encargamos de todo, desde la consultoría y el diseño, la impresión de la lona, hasta la instalación del carro valla y la activación de la opción LED para maximizar la visibilidad.
-                    </p>
-                </div>
-                <div class="row">
-                    <div class="col-md-3" data-sal="slide-up" data-sal-duration="800">
-                        <div class="service-process">
-                            <h3>Paso 1</h3>
-                            <img src="./images/carro_valla/impresion-publicidad.webp" class="img-fluid" alt="Imagen de carro valla">
-                            <p>Consultoría y Diseño</p>
+                <div class="header-main-nav">
+                <!-- Start Mainmenu Nav -->
+                <nav class="mainmenu-nav" id="mobilemenu-popup">
+                    <div class="d-block d-lg-none">
+                    <div class="mobile-nav-header">
+                        <div class="mobile-nav-logo">
+                        <a href="index.html">
+                            <img class="light-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
+                            <img class="dark-mode" src="./assets/media/logo-blanco-bagu.png" alt="Site Logo" style="width: 100px;">
+                        </a>
                         </div>
+                        <button class="mobile-menu-close" data-bs-dismiss="offcanvas">
+                        <i class="fas fa-times"></i>
+                        </button>
                     </div>
-                    <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="100">
-                        <div class="service-process">
-                            <h3>Paso 2</h3>
-                            <img src="./images/carro_valla/impresion-de-lona (1).webp" class="img-fluid" alt="Imagen de carro valla">
-                            <p>Impresión de la Lona</p>
-                        </div>
                     </div>
-                    <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
-                        <div class="service-process">
-                            <h3>Paso 3</h3>
-                            <img src="./images/carro_valla/carro-2.webp" class="img-fluid" alt="Imagen de carro valla">
-                            <p>Instalación en Carro Valla</p>
-                        </div>
-                    </div>
-                    <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="300">
-                        <div class="service-process">
-                            <h3>Paso 4</h3>
-                            <img src="./images/carro_valla/carro-valla-LED.webp" class="img-fluid" alt="Imagen de carro valla">
-                            <p>Activación</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="small-text" style="margin-top: 20px; font-size: 0.8rem; text-align: center; color: #ccc;">
-                    Nota: Servicio a nivel nacional en Colombia. (Ciertos departamentos no tienen cobertura)
-                </div>
-            </div>
-        </section>
-        <!--=====================================-->
-        <!--=        Proyectos / Portafolio         =-->
-        <!--=====================================-->
-        <section class="section section-padding-equal bg-color-light">
-            <div class="container">
-                <div class="section-heading heading-left">
-                    <span class="subtitle">Nuestros Proyectos</span>
-                    <h2 class="title">Ejemplos de Publicidad en Carro Valla</h2>
-                    <p>Conoce algunos de nuestros trabajos que destacan la efectividad y calidad de nuestras soluciones publicitarias.</p>
-                </div>
-                <div class="row row-45">
-                    <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
-                        <div class="project-grid project-style-2">
-                            <div class="thumbnail">
-                                <a href="./contact.html">
-                                    <!-- Imagen representativa de un carro valla con lona impresa -->
-                                    <img src="./images/carro_valla/carro_valla-2 (2).webp" alt="Carro Valla Clásico">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <span class="subtitle" style="color: white;">Impresión de Lona</span>
-                                <h3 class="title" style="color: white;"><a href="./contact.html">Carro Valla Clásico</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
-                        <div class="project-grid project-style-2">
-                            <div class="thumbnail">
-                                <a href="./contact.html">
-                                    <!-- Imagen representativa del Carro Valla LED -->
-                                    <img src="./images/carro_valla/carro-valla-LED.webp" alt="Publicidad LED Impactante">
-                                </a>
-                            </div>
-                            <div class="content">
-                                <span class="subtitle" style="color: #E62168;">Carro Valla LED</span>
-                                <h3 class="title" style="color: #E62168;"><a href="./contact.html">Publicidad LED Impactante</a></h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--=====================================-->
-        <!--=        Contact Area Start       	=-->
-        <!--=====================================-->
-        <section class="section-padding bg-color-dark">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000">
-                        <div class="contact-address mb--30">
-                            <div class="section-heading heading-light-left">
-                                <span class="subtitle">Contáctanos</span>
-                                <h2 class="title">¿Listo para tu publicidad?</h2>
-                            </div>
-                            <div class="address-list">
-                                <div class="address">
-                                    <h6 class="title">Correo</h6>
-                                    <p><a href="mailto:direccion.comercial@bagumedios.com">direccion.comercial@bagumedios.com</a></p>
-                                </div>
-                                <div class="address">
-                                    <h6 class="title">Dirección</h6>
-                                    <p>Calle 106 a #54-28</p>
-                                </div>
-                                <div class="address">
-                                    <h6 class="title">Teléfono</h6>
-                                    <p><a href="tel:+57319 7928459">+57 319 7928459</a></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">
-                        <div class="contact-form-box mb--30">
-                            <h3 class="title">Escríbenos tu consulta</h3>
-                            <form method="POST" action="./src/contact_home.php" id="form_bagu">
-                                <dotlottie-player
-                                src="https://lottie.host/acc07c23-ceaf-4c39-8465-c07a00ddd011/s3K5a5xpql.lottie"
-                                background="transparent"
-                                speed="1"
-                                id="lottie_carga"
-                                style="width: 280px; height: 280px; z-index: 18; margin: auto; display: none;"
-                                loop
-                                autoplay
-                                ></dotlottie-player>
-                                <div class="form-group">
-                                    <label>Nombre</label>
-                                    <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Correo</label>
-                                    <input type="email" class="form-control" name="correo" placeholder="ejemplo@mail.com" required>
-                                </div>
-                                <div class="form-group mb--40" id="grupo_numero">
-                                    <label>Numero</label>
-                                    <input type="tel" class="form-control" name="numero" placeholder="Numero de de celular o telefono fijo" id="num_colombia" pattern="^(3\d{9}|(60[1-8])?\d{7})$" required>
-                                    <p id="texto_numero" style="display: none; background-color: #E62168; color: white; border-radius: 50px; padding: 7px; margin: 5px; text-align: center;">El numero ingresado no es valido</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="servicio">Servicio de interes</label>
-                                    <select name="servicio" id="servicios" class="form-control" required>
-                                        <option value="BTL">BTL (volanteo y mucho mas )</option>
-                                        <option value="ATL">ATL (Vallas, Television o Radio )</option>
-                                        <option value="DTF">DTF IMPRESIONES</option>
-                                        <option value="POP MAN HOLOGRAFICO">POP MAN HOLOGRAFICO</option>
-                                        <option value="CATERING PARA EVENTOS">CATERING PARA EVENTOS</option>
-                                        <option value="DISEÑO WEB">DISEÑO WEB</option>
-                                    </select>
-                                </div>
-                                <div class="form group">
-                                    <label>Cuentanos mas sobre lo que deseas</label>
-                                    <textarea class="form-control" name="informacion" id="informacio_usuario" rows="4" required></textarea>
-                                </div>
-                                <!-- Campo oculto para el token de reCAPTCHA -->
-                                <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-                                <div class="form-group">
-                                    <button type="submit" class="axil-btn btn-borderd btn-fluid btn-primary mt-3" id = "button_enviar">CONTACTANOS AHORA</button>
-                                    <button class="btn btn-warning" type="button" id="spinner_contact" style="display: none;" disabled>
-                                        <span class="spinner-border spinner-border-sm " aria-hidden="true"></span>
-                                        <span role="status">Cargando...</span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--=====================================-->
-        <!--=        Footer Area Start       	=-->
-        <!--=====================================-->
-        <footer class="footer-area footer-dark">
-            <div class="container">
-                <div class="footer-bottom" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="footer-copyright">
-                                <span class="copyright-text">© 2025. Todos los derechos reservados por Bagu Medios SAS.</span>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="footer-bottom-link">
-                                <ul class="list-unstyled">
-                                    <li><a href="privacy-policy.html">Política de Privacidad</a></li>
-                                    <li><a href="terms-of-use.html">Términos de Uso</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!--=====================================-->
-        <!--=       Offcanvas Menu Area       	=-->
-        <!--=====================================-->
-        <div class="offcanvas offcanvas-end header-offcanvasmenu" tabindex="-1" id="offcanvasMenuRight">
-            <div class="offcanvas-header">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
-            </div>
-            <div class="offcanvas-body">
-                <form action="#" class="side-nav-search-form">
-                    <div class="form-group">
-                        <input type="text" class="search-field" name="search-field" placeholder="Buscar...">
-                        <button class="side-nav-search-btn"><i class="fas fa-search"></i></button>
-                    </div>
-                </form>
-                <div class="row ">
-                    <div class="col-lg-5 col-xl-6">
-                        <ul class="main-navigation list-unstyled">
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="services.html">Servicios</a></li>
-                            <li><a href="portfolio.html">Portafolio</a></li>
-                            <li><a href="about-us.html">Nosotros</a></li>
-                            <li><a href="contact.html">Contacto</a></li>
+                    <ul class="mainmenu">
+                    <li class="menu-item-has-children">
+                        <a href="javascript:void(0);">BTL</a>
+                        <ul class="axil-submenu">
+                        <li><a href="./volanteo.html">Volanteo itinerante</a></li>
+                        <li><a href="./volanteoLed.html">Volanteo con pantalla led</a></li>
+                        <li><a href="./Carro_valla.html">Carro valla</a></li>
+                        <li><a href="./centrosComerciales.html">Publicidad en centros comerciales y aeropuertos</a></li>
                         </ul>
-                    </div>
-                    <div class="col-lg-7 col-xl-6">
-                        <div class="contact-info-wrap">
-                            <div class="contact-inner">
-                                <address class="address">
-                                    <span class="title">Información de Contacto</span>
-                                    <p>Calle 123, Bogotá, Colombia</p>
-                                </address>
-                                <address class="address">
-                                    <span class="title">Llámanos 24/7</span>
-                                    <a class="tel" href="tel:+57123456789"><i class="fas fa-phone"></i>+57 123 456789</a>
-                                </address>
-                            </div>
-                            <div class="contact-inner">
-                                <h5 class="title">Encuéntranos aquí</h5>
-                                <div class="contact-social-share">
-                                    <ul class="social-share list-unstyled">
-                                        <li><a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
-                                        <li><a href="https://twitter.com/"><i class="fab fa-x-twitter"></i></a></li>
-                                        <li><a href="https://www.behance.net/"><i class="fab fa-behance"></i></a></li>
-                                        <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="javascript:void(0);">Transporte masivo</a>
+                        <ul class="axil-submenu">
+                        <li><a href="./transmilenio.html">Publicidad en Transmilenio</a></li>
+                        <li><a href="./busesCali.html">Publicidad en buses Cali</a></li>
+                        <li><a href="./busesBarraquilla.html">Publicidad en buses Barranquilla</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="javascript:void(0);">Publicidad Digital</a>
+                        <ul class="axil-submenu">
+                        <li><a href="./publicidadFacebook.html">Publicidad Facebook Ads</a></li>
+                        <li><a href="./publicidadGoogleAds.html">Publicidad Google Ads (Search Console)</a></li>
+                        <li><a href="./PublicidadPush.html">Push multimedia</a></li>
+                        <li><a href="./publicidadYoutube.html">Pauta en YouTube</a></li>
+                        <li><a href="./publicidadAplicaciones.html">Pauta en aplicaciones</a></li>
+                        </ul>
+                    </li>
+                    <li class="menu-item-has-children">
+                        <a href="javascript:void(0);">Blog</a>
+                        <ul class="axil-submenu">
+                        <li><a href="./blog/blog.html">Blog</a></li>
+                        <li><a href="./blog/ultimaNoticia.js">Última noticia</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="./Dtf_impresiones.html">DTF Impresiones</a>
+                    </li>
+                    <li>
+                        <a href="./clientes.html">Clientes</a>
+                    </li>
+                    <button class="contactMenuButton" onclick="window.location.href = './contact.html'">Contáctanos</button>
+                    </ul>
+                </nav>
+                <!-- End Mainmenu Nav -->
                 </div>
+                <div class="header-action">
+                <ul class="list-unstyled">
+                    <li class="mobile-menu-btn sidemenu-btn d-lg-none d-block">
+                    <button class="btn-wrap btn-dark" data-bs-toggle="offcanvas" data-bs-target="#mobilemenu-popup">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    </li>
+                    <li class="my_switcher d-block d-lg-none">
+                    <ul>
+                        <li title="Light Mode">
+                        <a href="javascript:void(0)" class="setColor light" data-theme="light">
+                            <i class="fal fa-lightbulb-on"></i>
+                        </a>
+                        </li>
+                        <li title="Dark Mode">
+                        <a href="javascript:void(0)" class="setColor dark" data-theme="dark">
+                            <i class="fas fa-moon"></i>
+                        </a>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+                </div>
+            </div>
             </div>
         </div>
+        </header>
 
-    </div>
+        <!-- Banner -->
+        <section class="banner banner-style-3">
+        <div class="background-video">
+            <div class="bg"></div>
+            <div class="bg bg2"></div>
+            <div class="bg bg3"></div>
+        </div>
+        <div class="container">
+            <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="banner-content">
+                <span class="subtitle" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">Publicidad Integral</span>
+                <h1 class="title" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">Publicidad en Carro Valla</h1>
+                <p data-sal="slide-up" data-sal-duration="1000" data-sal-delay="300">
+                    Soluciones completas: desde la impresión de lonas de alta calidad para carro valla hasta la opción Carro Valla LED que capta la atención de tus clientes.
+                </p>
+                <div class="btn-group" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="400">
+                    <a href="contact.html" class="axil-btn btn-fill-primary btn-large">Solicitar Cotización</a>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="banner-thumbnail">
+                <div class="large-thumb" data-sal="slide-up" data-sal-duration="800" data-sal-delay="500">
+                    <img class="paralax-image" src="./images/carro_valla/carro-valla-principal.webp" alt="Publicidad en Carro Valla">
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        <ul class="list-unstyled shape-group-20">
+            <li class="shape shape-1" data-sal="slide-down" data-sal-duration="500" data-sal-delay="100">
+            <img src="assets/media/others/bubble-32.png" alt="Bubble">
+            </li>
+            <li class="shape shape-2" data-sal="slide-left" data-sal-duration="500" data-sal-delay="200">
+            <img src="assets/media/others/bubble-33.png" alt="Bubble">
+            </li>
+            <li class="shape shape-4" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
+            <img src="assets/media/others/bubble-14.png" alt="Bubble">
+            </li>
+            <li class="shape shape-5" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
+            <img src="assets/media/others/bubble-4.png" alt="Bubble">
+            </li>
+            <li class="shape shape-6" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
+            <img src="assets/media/others/bubble-30.png" alt="Bubble">
+            </li>
+            <li class="shape shape-7" data-sal="slide-left" data-sal-duration="500" data-sal-delay="700">
+            <img src="assets/media/others/bubble-31.png" alt="Bubble">
+            </li>
+        </ul>
+        </section>
 
-    <!-- Formulario de contacto js -->
-    <script src="./assets/js/index.js"></script>
+        <!-- Sección de Proceso y Descripción -->
+        <section class="section section-padding bg-color-dark">
+        <div class="container" style="margin-top: 50px;">
+            <div class="section-heading heading-light-left">
+            <span class="subtitle">Nuestro Proceso</span>
+            <h2 class="title">Publicidad en Carro Valla de principio a fin</h2>
+            <p>
+                Con nosotros, el proceso es sencillo y ágil: nos encargamos de todo, desde la consultoría y el diseño, la impresión de la lona, hasta la instalación del carro valla y la activación de la opción LED para maximizar la visibilidad.
+            </p>
+            </div>
+            <div class="row">
+            <div class="col-md-3" data-sal="slide-up" data-sal-duration="800">
+                <div class="service-process">
+                <h3>Paso 1</h3>
+                <img src="./images/carro_valla/impresion-publicidad.webp" class="img-fluid" alt="Publicidad en Carro Valla - Consultoría y Diseño">
+                <p>Consultoría y Diseño</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="100">
+                <div class="service-process">
+                <h3>Paso 2</h3>
+                <img src="./images/carro_valla/impresion-de-lona (1).webp" class="img-fluid" alt="Publicidad en Carro Valla - Impresión de la Lona">
+                <p>Impresión de la Lona</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+                <div class="service-process">
+                <h3>Paso 3</h3>
+                <img src="./images/carro_valla/carro-2.webp" class="img-fluid" alt="Publicidad en Carro Valla - Instalación">
+                <p>Instalación en Carro Valla</p>
+                </div>
+            </div>
+            <div class="col-md-3" data-sal="slide-up" data-sal-duration="800" data-sal-delay="300">
+                <div class="service-process">
+                <h3>Paso 4</h3>
+                <img src="./images/carro_valla/carro-valla-LED.webp" class="img-fluid" alt="Publicidad en Carro Valla - Activación LED">
+                <p>Activación</p>
+                </div>
+            </div>
+            </div>
+            <div class="small-text" style="margin-top: 20px; font-size: 0.8rem; text-align: center; color: #ccc;">
+            Nota: Servicio a nivel nacional en Colombia. (Ciertos departamentos no tienen cobertura)
+            </div>
+        </div>
+        </section>
 
-    <!-- Jquery Js -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/isotope.pkgd.min.js"></script>
-    <script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
-    <script src="assets/js/vendor/odometer.min.js"></script>
-    <script src="assets/js/vendor/jquery-appear.js"></script>
-    <script src="assets/js/vendor/slick.min.js"></script>
-    <script src="assets/js/vendor/sal.js"></script>
-    <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/vendor/js.cookie.js"></script>
-    <script src="assets/js/vendor/jquery.style.switcher.js"></script>
-    <script src="assets/js/vendor/jquery.countdown.min.js"></script>
-    <script src="assets/js/vendor/tilt.js"></script>
-    <script src="assets/js/vendor/green-audio-player.min.js"></script>
-    <script src="assets/js/vendor/jquery.nav.js"></script>
+        <!-- Proyectos / Portafolio -->
+        <section class="section section-padding-equal bg-color-light">
+        <div class="container">
+            <div class="section-heading heading-left">
+            <span class="subtitle">Nuestros Proyectos</span>
+            <h2 class="title">Ejemplos de Publicidad en Carro Valla</h2>
+            <p>Conoce algunos de nuestros trabajos que destacan la efectividad y calidad de nuestras soluciones publicitarias.</p>
+            </div>
+            <div class="row row-45">
+            <div class="col-md-6" data-sal="slide-up" data-sal-duration="800">
+                <div class="project-grid project-style-2">
+                <div class="thumbnail">
+                    <a href="./contact.html">
+                    <img src="./images/carro_valla/carro_valla-2 (2).webp" alt="Carro Valla Clásico">
+                    </a>
+                </div>
+                <div class="content">
+                    <span class="subtitle" style="color: white;">Impresión de Lona</span>
+                    <h3 class="title" style="color: white;"><a href="./contact.html">Carro Valla Clásico</a></h3>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+                <div class="project-grid project-style-2">
+                <div class="thumbnail">
+                    <a href="./contact.html">
+                    <img src="./images/carro_valla/carro-valla-LED.webp" alt="Publicidad LED Impactante">
+                    </a>
+                </div>
+                <div class="content">
+                    <span class="subtitle" style="color: #E62168;">Carro Valla LED</span>
+                    <h3 class="title" style="color: #E62168;"><a href="./contact.html">Publicidad LED Impactante</a></h3>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
 
-    <!-- Site Scripts -->
-    <script src="assets/js/app.js"></script>
-</body>
+        <!-- Contacto -->
+        <section class="section-padding bg-color-dark">
+        <div class="container">
+            <div class="row">
+            <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000">
+                <div class="contact-address mb--30">
+                <div class="section-heading heading-light-left">
+                    <span class="subtitle">Contáctanos</span>
+                    <h2 class="title">¿Listo para tu publicidad?</h2>
+                </div>
+                <div class="address-list">
+                    <div class="address">
+                    <h6 class="title">Correo</h6>
+                    <p><a href="mailto:direccion.comercial@bagumedios.com">direccion.comercial@bagumedios.com</a></p>
+                    </div>
+                    <div class="address">
+                    <h6 class="title">Dirección</h6>
+                    <p>Calle 106 a #54-28</p>
+                    </div>
+                    <div class="address">
+                    <h6 class="title">Teléfono</h6>
+                    <p><a href="tel:+57123456789">+57 123 456789</a></p>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="200">
+                <div class="contact-form-box mb--30">
+                <h3 class="title">Escríbenos tu consulta</h3>
+                <form method="POST" action="./src/contact_home.php" id="form_bagu">
+                    <dotlottie-player
+                    src="https://lottie.host/acc07c23-ceaf-4c39-8465-c07a00ddd011/s3K5a5xpql.lottie"
+                    background="transparent"
+                    speed="1"
+                    id="lottie_carga"
+                    style="width: 280px; height: 280px; z-index: 18; margin: auto; display: none;"
+                    loop
+                    autoplay
+                    ></dotlottie-player>
+                    <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="form-group">
+                    <label>Correo</label>
+                    <input type="email" class="form-control" name="correo" placeholder="ejemplo@mail.com" required>
+                    </div>
+                    <div class="form-group mb--40" id="grupo_numero">
+                    <label>Número</label>
+                    <input type="tel" class="form-control" name="numero" placeholder="Número de celular o teléfono fijo" id="num_colombia" pattern="^(3\d{9}|(60[1-8])?\d{7})$" required>
+                    <p id="texto_numero" style="display: none; background-color: #E62168; color: white; border-radius: 50px; padding: 7px; margin: 5px; text-align: center;">El número ingresado no es válido</p>
+                    </div>
+                    <div class="form-group">
+                    <label for="servicio">Servicio de interés</label>
+                    <select name="servicio" id="servicios" class="form-control" required>
+                        <option value="BTL">BTL (volanteo y mucho más)</option>
+                        <option value="ATL">ATL (Vallas, Televisión o Radio)</option>
+                        <option value="DTF">DTF Impresiones</option>
+                        <option value="POP MAN HOLOGRAFICO">POP MAN HOLOGRAFICO</option>
+                        <option value="CATERING PARA EVENTOS">Catering para eventos</option>
+                        <option value="DISEÑO WEB">Diseño web</option>
+                    </select>
+                    </div>
+                    <div class="form-group">
+                    <label>Cuéntanos más sobre lo que deseas</label>
+                    <textarea class="form-control" name="informacion" id="informacio_usuario" rows="4" required></textarea>
+                    </div>
+                    <!-- Campo oculto para el token de reCAPTCHA -->
+                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
+                    <div class="form-group">
+                    <button type="submit" class="axil-btn btn-borderd btn-fluid btn-primary mt-3" id="button_enviar">CONTÁCTANOS AHORA</button>
+                    <button class="btn btn-warning" type="button" id="spinner_contact" style="display: none;" disabled>
+                        <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                        <span role="status">Cargando...</span>
+                    </button>
+                    </div>
+                </form>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
 
-</html>
+        <!-- Footer Area Start -->
+        <footer class="footer-area footer-dark">
+        <div class="container">
+            <div class="footer-bottom" data-sal="slide-up" data-sal-duration="500" data-sal-delay="100">
+            <div class="row">
+                <div class="col-md-6">
+                <div class="footer-copyright">
+                    <span class="copyright-text">© 2025. Todos los derechos reservados por Bagu Medios SAS.</span>
+                </div>
+                </div>
+                <div class="col-md-6">
+                <div class="footer-bottom-link">
+                    <ul class="list-unstyled">
+                    <li><a href="privacy-policy.html">Política de Privacidad</a></li>
+                    <li><a href="terms-of-use.html">Términos de Uso</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </footer>
+
+        <!-- Offcanvas Menu Area -->
+        <div class="offcanvas offcanvas-end header-offcanvasmenu" tabindex="-1" id="offcanvasMenuRight">
+        <div class="offcanvas-header">
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar"></button>
+        </div>
+        <div class="offcanvas-body">
+            <form action="#" class="side-nav-search-form">
+            <div class="form-group">
+                <input type="text" class="search-field" name="search-field" placeholder="Buscar...">
+                <button class="side-nav-search-btn"><i class="fas fa-search"></i></button>
+            </div>
+            </form>
+            <div class="row">
+            <div class="col-lg-5 col-xl-6">
+                <ul class="main-navigation list-unstyled">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="services.html">Servicios</a></li>
+                <li><a href="portfolio.html">Portafolio</a></li>
+                <li><a href="about-us.html">Nosotros</a></li>
+                <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-7 col-xl-6">
+                <div class="contact-info-wrap">
+                <div class="contact-inner">
+                    <address class="address">
+                    <span class="title">Información de Contacto</span>
+                    <p>Calle 123, Bogotá, Colombia</p>
+                    </address>
+                    <address class="address">
+                    <span class="title">Llámanos 24/7</span>
+                    <a class="tel" href="tel:+57123456789"><i class="fas fa-phone"></i>+57 123 456789</a>
+                    </address>
+                </div>
+                <div class="contact-inner">
+                    <h5 class="title">Encuéntranos aquí</h5>
+                    <div class="contact-social-share">
+                    <ul class="social-share list-unstyled">
+                        <li><a href="https://facebook.com/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/"><i class="fab fa-x-twitter"></i></a></li>
+                        <li><a href="https://www.behance.net/"><i class="fab fa-behance"></i></a></li>
+                        <li><a href="https://www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Scripts -->
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""></script>
+        <script src="./Volanteo_logica/inicializador_map.js"></script>
+        <script src="./Volanteo_logica/actalizarFormulario.js"></script>
+        <script src="./Volanteo_logica/procesador_formulario_volanteador.js"></script>
+        <script src="./assets/js/index.js"></script>
+        <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/vendor/bootstrap.min.js"></script>
+        <script src="assets/js/vendor/isotope.pkgd.min.js"></script>
+        <script src="assets/js/vendor/imagesloaded.pkgd.min.js"></script>
+        <script src="assets/js/vendor/odometer.min.js"></script>
+        <script src="assets/js/vendor/jquery-appear.js"></script>
+        <script src="assets/js/vendor/slick.min.js"></script>
+        <script src="assets/js/vendor/sal.js"></script>
+        <script src="assets/js/vendor/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/vendor/js.cookie.js"></script>
+        <script src="assets/js/vendor/jquery.style.switcher.js"></script>
+        <script src="assets/js/vendor/jquery.countdown.min.js"></script>
+        <script src="assets/js/vendor/tilt.js"></script>
+        <script src="assets/js/vendor/green-audio-player.min.js"></script>
+        <script src="assets/js/vendor/jquery.nav.js"></script>
+        <script src="assets/js/app.js"></script>
+    </body>
+    </html>
+
+

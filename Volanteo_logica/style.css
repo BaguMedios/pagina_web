@@ -1,4 +1,4 @@
-/* Estiliza el formulario */
+/* 🎯 Estiliza el formulario */
 #volanteoForm {
     margin: 20px;
     padding: 15px;
@@ -6,7 +6,7 @@
     background-color: rgba(0, 0, 0, 0.2);
 }
 
-/* Configuración del grid */
+/* 🎯 Configuración del grid */
 #resultadoCheck {
     width: 100%;
     height: auto;
@@ -18,7 +18,7 @@
     padding: 15px;
 }
 
-/* Estilo de cada elemento del grid */
+/* 🎯 Estilo de cada elemento del grid */
 .valores_resultado {
     display: flex;
     flex-direction: column;
@@ -33,19 +33,19 @@
     transition: all 0.3s ease-in-out;
 }
 
-/* Efecto hover */
+/* 🎯 Efecto hover */
 .valores_resultado:hover {
     transform: scale(1.05);
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Hace que el último elemento ocupe las 3 columnas */
+/* 🎯 Último elemento ocupa las 3 columnas */
 .valores_resultado:last-child {
     grid-column: span 3;
     background-color: rgba(255, 255, 255, 0.3);
 }
 
-/* Estilo del texto del resultado */
+/* 🎯 Estilo del texto del resultado */
 .resultado {
     color: white;
     font-size: 36px;
@@ -53,13 +53,13 @@
     margin-top: 5px;
 }
 
-/* Estilo para el titulo del mapa*/
-.TitleMapa{
+/* 🎯 Estilo para el título del mapa */
+.TitleMapa {
     font-size: 35px;
     font-weight: bold;
 }
 
-/* Ajustes responsivos */
+/* 🎯 Ajustes responsivos */
 @media (max-width: 1200px) {
     /* Reduce a 2 columnas */
     #resultadoCheck {
@@ -71,8 +71,8 @@
         grid-column: span 2;
     }
 
-    /* Estilo para el titulo del mapa*/
-    .TitleMapa{
+    /* Estilo para el título del mapa */
+    .TitleMapa {
         font-size: 30px;
         font-weight: bold;
     }
@@ -93,12 +93,64 @@
     .resultado {
         font-size: 28px;
     }
-    /* Estilo para el titulo del mapa*/
-    .TitleMapa{
+
+    /* Estilo para el título del mapa */
+    .TitleMapa {
         font-size: 20px;
         font-weight: bold;
     }
 }
+
+/* 🎯 BOTÓN FLOTANTE MENOS INVASIVO CON ANIMACIÓN */
+.button-action {
+    position: fixed;
+    right: -80px; /* Se esconde parcialmente */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 87, 34, 0.8); /* Color con opacidad */
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    width: 160px;
+    text-align: center;
+    border-radius: 12px 0px 0px 12px;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out, background 0.3s ease-in-out, opacity 0.3s;
+    opacity: 0.9; /* Menos visible en estado normal */
+
+    /* 🔥 Animación de rebote cada 5s */
+    animation: botonRebote 1s ease-in-out infinite alternate 5s;
+}
+
+/* 🎯 Efecto hover: cuando el usuario pasa el mouse o toca el botón */
+.button-action:hover,
+.button-action:focus {
+    right: 0;
+    opacity: 1;
+    background-color: #e64a19; /* Color más intenso */
+    animation: none; /* Si el usuario interactúa, se detiene la animación */
+}
+
+/* 🔥 Animación de rebote */
+@keyframes botonRebote {
+    0% { transform: translateY(-50%) translateX(0); }
+    50% { transform: translateY(-50%) translateX(-10px); }
+    100% { transform: translateY(-50%) translateX(0); }
+}
+
+/* 🎯 Ajustes para móviles */
+@media (max-width: 768px) {
+    .button-action {
+        right: -100px; /* Más escondido en móviles */
+        width: 140px;
+        font-size: 12px;
+        opacity: 0.5;
+    }
+}
+
 
 
 

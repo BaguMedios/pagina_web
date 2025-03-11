@@ -5,3 +5,10 @@
     rangeInput.addEventListener('input', function() {
         rangeValue.textContent = this.value;
     });
+
+    document.querySelector(".button-action").addEventListener("click", function() {
+        document.getElementById("app-volanteo").scrollIntoView({
+            behavior: "smooth" // Desplazamiento suave
+        });
+    });
+    

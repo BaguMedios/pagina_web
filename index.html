@@ -235,129 +235,20 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-xl-5" data-sal="slide-up" data-sal-duration="1000" data-sal-delay="100">
-                        <div class="banner-form">
-                            <div class="contact-form-box shadow-box">
-                                <h3 class="title">CONTACTANOS EN BAGU MEDIOS</h3>
-                                <form method="POST" action="./src/contact_home.php" id="form_bagu">
-                                    <dotlottie-player
-                                    src="https://lottie.host/acc07c23-ceaf-4c39-8465-c07a00ddd011/s3K5a5xpql.lottie"
-                                    background="transparent"
-                                    speed="1"
-                                    id="lottie_carga"
-                                    style="width: 280px; height: 280px; z-index: 18; margin: auto; display: none;"
-                                    loop
-                                    autoplay
-                                    ></dotlottie-player>
-                                    <div class="form-group">
-                                        <label>Nombre</label>
-                                        <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Correo</label>
-                                        <input type="email" class="form-control" name="correo" placeholder="ejemplo@mail.com" required>
-                                    </div>
-                                    <div class="form-group mb--40" id="grupo_numero">
-                                        <label>Numero</label>
-                                        <input type="tel" class="form-control" name="numero" placeholder="Numero de de celular o telefono fijo" id="num_colombia" pattern="^(3\d{9}|(60[1-8])?\d{7})$" required>
-                                        <p id="texto_numero" style="display: none; background-color: #E62168; color: white; border-radius: 50px; padding: 7px; margin: 5px; text-align: center;">El numero ingresado no es valido</p>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="servicio">Servicio de interes</label>
-                                        <select name="servicio" id="servicios" class="form-control" required>
-                                            <option value="BTL">BTL (volanteo y mucho mas )</option>
-                                            <option value="ATL">ATL (Vallas, Television o Radio )</option>
-                                            <option value="DTF">DTF IMPRESIONES</option>
-                                            <option value="POP MAN HOLOGRAFICO">POP MAN HOLOGRAFICO</option>
-                                            <option value="CATERING PARA EVENTOS">CATERING PARA EVENTOS</option>
-                                            <option value="DISEÑO WEB">DISEÑO WEB</option>
-                                        </select>
-                                    </div>
-                                    <div class="form group">
-                                        <label>Cuentanos mas sobre lo que deseas</label>
-                                        <textarea class="form-control" name="informacion" id="informacio_usuario" rows="4" required></textarea>
-                                    </div>
-                                    <!-- Campo oculto para el token de reCAPTCHA -->
-                                    <input type="hidden" name="g-recaptcha-response" id="g-recaptcha-response">
-                                    <div class="form-group">
-                                        <button type="submit" class="axil-btn btn-borderd btn-fluid btn-primary mt-3" id = "button_enviar">CONTACTANOS AHORA</button>
-                                        <button class="btn btn-warning" type="button" id="spinner_contact" style="display: none;" disabled>
-                                            <span class="spinner-border spinner-border-sm " aria-hidden="true"></span>
-                                            <span role="status">Cargando...</span>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>                    
         </section>
-        <!--=====================================-->
-        <!--=        Service Area Start         =-->
-        <!--=====================================-->
-        <section class="section section-padding">
-            <div class="container">
-                <div class="section-heading heading-left mb--20 mb_md--70">
-                    <span class="subtitle">¿Porque elegir a Bagu Medios?</span>
-                    <h2 class="title">Servicios que <br> Ayudan a tu marca</h2>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4 mt--200 mt_md--0" data-sal="slide-up" data-sal-duration="800" data-sal-delay="100">
-                        <div class="services-grid service-style-2">
-                            <div class="thumbnail">
-                                <dotlottie-player src="https://lottie.host/62a11fc5-e8b0-417b-a5fe-4f8c9ec9b179/Bgf2vffGPS.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></dotlottie-player>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"> <a href="#">Facilidad</a></h5>
-                                <p>En Bagu Medios, estamos comprometidos en facilitar el proceso publicitario de tu marca, convirtiéndonos en un aliado estratégico para tu éxito. </p>
-                                <a href="#" class="more-btn">Saber mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 mt--100 mt_md--0" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
-                        <div class="services-grid service-style-2 active">
-                            <div class="thumbnail">
-                                <dotlottie-player src="https://lottie.host/9f67cd98-d637-4032-a011-b0509ba136e6/I6WGpjfBD9.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></dotlottie-player>
-                            </div>
-                            <div class="content">
-                                <h5 class="title"> <a href="#">Compromiso</a></h5>
-                                <p>   En bagu medios cumplimos con tus tiempos y proyectos</p>
-                                <a href="#" class="more-btn">Saber mas</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4" data-sal="slide-up" data-sal-duration="800" data-sal-delay="300">
-                        <div class="services-grid service-style-2">
-                            <div class="thumbnail">
-                                <img src="assets/media/icon/icon-6.png" alt="icon">
-                            </div>
-                            <div class="content">
-                                <h5 class="title"> <a href="#">Registro fotografico</a></h5>
-                                <p>Se envia registro fotografico dia a dia de la actividad</p>
-                                <a href="#" class="more-btn">Saber mas</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <ul class="shape-group-7 list-unstyled">
-                <li class="shape shape-1"><img src="assets/media/others/circle-2.png" alt="circle"></li>
-                <li class="shape shape-2"><img src="assets/media/others/bubble-2.png" alt="Line"></li>
-                <li class="shape shape-3"><img src="assets/media/others/bubble-1.png" alt="Line"></li>
-            </ul>
-        </section>
-        <!--=====================================-->
+                <!--=====================================-->
         <!--=        Project Area Start         =-->
         <!--=====================================-->
         <section class="section section-padding-2 bg-color-light">
             <div class="container">
                 <div class="section-heading heading-left">
                     <span class="subtitle">Portafolio</span>
-                    <h2 class="title">Mas de <br> Nuestro portafolio</h2>
+                    <h2 class="title">Tenemos lo que Necesitas</h2>
                 </div>
                 <div class="axil-isotope-wrapper">
                     <div class="isotope-button isotope-project-btn">
                         <button data-filter="*" class="is-checked"><span class="filter-text">Todos</span></button>
-                        <button data-filter=".btl"><span class="filter-text">BTL</span></button>
+                        <button data-filter=".btl"><span class="filter-text">ACTIVACIONES DE MARCA</span></button>
                         <button data-filter=".atl"><span class="filter-text">ATL</span></button>
                         <button data-filter=".dtf"><span class="filter-text">DTF</span></button>
                         <button data-filter=".web"><span class="filter-text">WEB</span></button>
@@ -651,6 +542,60 @@
                                     <h4 class="title"><a href="#">Diseño web</a></h4>
                                     <span class="subtitle">Activaciones tec</span>
                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <ul class="shape-group-7 list-unstyled">
+                <li class="shape shape-1"><img src="assets/media/others/circle-2.png" alt="circle"></li>
+                <li class="shape shape-2"><img src="assets/media/others/bubble-2.png" alt="Line"></li>
+                <li class="shape shape-3"><img src="assets/media/others/bubble-1.png" alt="Line"></li>
+            </ul>
+        </section>
+        <!--=====================================-->
+        <!--=        Service Area Start         =-->
+        <!--=====================================-->
+        <section class="section section-padding">
+            <div class="container">
+                <div class="section-heading heading-left mb--20 mb_md--70">
+                    <span class="subtitle">¿Porque elegir a Bagu Medios?</span>
+                    <h2 class="title">Servicios que <br> Ayudan a tu marca</h2>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 mt--200 mt_md--0" data-sal="slide-up" data-sal-duration="800" data-sal-delay="100">
+                        <div class="services-grid service-style-2">
+                            <div class="thumbnail">
+                                <dotlottie-player src="https://lottie.host/62a11fc5-e8b0-417b-a5fe-4f8c9ec9b179/Bgf2vffGPS.json" background="transparent" speed="1" style="width: 80px; height: 80px;" loop autoplay></dotlottie-player>
+                            </div>
+                            <div class="content">
+                                <h5 class="title"> <a href="#">Facilidad</a></h5>
+                                <p>En Bagu Medios, estamos comprometidos en facilitar el proceso publicitario de tu marca, convirtiéndonos en un aliado estratégico para tu éxito. </p>
+                                <a href="#" class="more-btn">Saber mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 mt--100 mt_md--0" data-sal="slide-up" data-sal-duration="800" data-sal-delay="200">
+                        <div class="services-grid service-style-2 active">
+                            <div class="thumbnail">
+                                <dotlottie-player src="https://lottie.host/9f67cd98-d637-4032-a011-b0509ba136e6/I6WGpjfBD9.json" background="transparent" speed="1" style="width: 100px; height: 100px;" loop autoplay></dotlottie-player>
+                            </div>
+                            <div class="content">
+                                <h5 class="title"> <a href="#">Compromiso</a></h5>
+                                <p>   En bagu medios cumplimos con tus tiempos y proyectos</p>
+                                <a href="#" class="more-btn">Saber mas</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4" data-sal="slide-up" data-sal-duration="800" data-sal-delay="300">
+                        <div class="services-grid service-style-2">
+                            <div class="thumbnail">
+                                <img src="assets/media/icon/icon-6.png" alt="icon">
+                            </div>
+                            <div class="content">
+                                <h5 class="title"> <a href="#">Registro fotografico</a></h5>
+                                <p>Se envia registro fotografico dia a dia de la actividad</p>
+                                <a href="#" class="more-btn">Saber mas</a>
                             </div>
                         </div>
                     </div>

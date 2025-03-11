@@ -1,6 +1,6 @@
 :root{
     --color_primario_bagu : #D33968;
-    --color_secundario_bagu : #f4ced9;
+    --color_secundario_bagu : #3968d3;
 }
     .bg {
         animation:slide 3s ease-in-out infinite alternate;
