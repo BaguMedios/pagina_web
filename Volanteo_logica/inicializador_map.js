@@ -4,6 +4,7 @@ var map = L.map('map').setView([4.60971, -74.08175], 13);
 
 
         // Agregar la capa de MapTiler Streets v2 con tileLayer
+        //maptiler se uso para los mosaicos
         L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=74roQXZC4SrWWBYuZxhI', {
           attribution: '&copy; <a href="https://www.maptiler.com/">MapTiler</a> contributors',
           maxZoom: 20,
@@ -38,9 +39,9 @@ function drawLocalityBoundary(localidad) {
           localityLayer = L.geoJSON(result.geojson, {
             style: function (feature) {
               return {
-                color: '#ff7800',       // Color del borde
+                color: '#D33968',       // Color del borde
                 weight: 2,              // Ancho del borde
-                fillColor: '#fffc00',    // Color de relleno
+                fillColor: '#D33968',    // Color de relleno
                 fillOpacity: 0.5,        // Opacidad del relleno
                 dashArray: '5, 10'       // Patrón de guiones en el borde
               };

@@ -5,7 +5,7 @@
 }
 .carousel{
     width: 100vw;
-    height: 100vh;
+    height: 110vh;
     overflow: hidden;
     margin-top: -150px;
 }
@@ -338,6 +338,19 @@
         z-index: 10;
         display: flex;
         gap: 20px;
+        display: none;
+    }
+    .arrows button{
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background-color: #eee4;
+        border: none;
+        font-family: monospace;
+        color: white;
+        font-weight: bold;
+        font-size: large;
+        transition: .5;
     }
 }
 
