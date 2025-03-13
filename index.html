@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="./home_logica//animacionHeader.css">
     <!--estilos del banner carousel-->
     <link rel="stylesheet" href="./home_logica/style.css">
+    <!--Estilos del banner de servicios-->
+    <link rel="stylesheet" href="./home_logica/Servicios.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
@@ -112,7 +114,7 @@
 <!--=====================================-->
 <!--=        Header Area Start       	=-->
 <!--=====================================-->
-<header class="header axil-header header-style-4" style="height: 120px;">
+<header class="header axil-header header-style-4" style="height: 120px;z-index: 100000;">
     <div id="axil-sticky-placeholder"></div>
     <div class="axil-mainmenu">
         <div class="container">
@@ -140,7 +142,7 @@
                         </div>
                         <ul class="mainmenu">
                             <li class="menu-item-has-children">
-                                <a href="javascript:void(0);">BTL</a>
+                                <a href="javascript:void(0);">Volanteo</a>
                                 <ul class="axil-submenu">
                                     <li><a href="./volanteo.html">Volanteo intinerante</a></li>
                                     <li><a href="./volanteoLed.html">Volanteo con pantalla led</a></li>
@@ -228,10 +230,11 @@
                 <div class="ContentItem">
                     <div class="author">Publicidad</div>
                     <div class="title">Agencia de</div>
-                    <div class="topic">Publicidad 360</div>
-                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, perferendis tempore ipsa similique veritatis in ullam maxime? Velit, provident! Repellendus commodi quibusdam earum nisi eius veniam impedit ex odit praesentium.</div>
+                    <div class="topic" style="color: white;">Publicidad 360</div>
+                    <div class="des">🎯 Todo lo que tu marca necesita, en un solo lugar.
+                        Desde publicidad exterior hasta estrategias digitales, creamos experiencias que generan impacto y resultados. 🚀💼 ¡Hagamos que tu marca brille en todos los canales!</div>
                     <div class="buttonsCarusel">
-                        <button>Saber mas</button>
+                        <button>Saber más</button>
                         <button>Quiero impulsar mi marca</button>
                     </div>
                 </div>
@@ -240,11 +243,12 @@
                 <img src="./images/carousel/bogota.jpg" alt="Imagen de banner 3">
                 <div class="ContentItem">
                     <div class="author">Publicidad</div>
-                    <div class="title">Trasmilenio</div>
-                    <div class="topic">Bogota</div>
-                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, perferendis tempore ipsa similique veritatis in ullam maxime? Velit, provident! Repellendus commodi quibusdam earum nisi eius veniam impedit ex odit praesentium.</div>
+                    <div class="title">Volanteo y</div>
+                    <div class="topic">Activaciones</div>
+                    <div class="des">📢 ¡Lleva tu marca a las calles y conecta con tu público!
+                        No esperes que te busquen, ¡haz que te recuerden! Impacta con estrategias de volantes y activaciones que generan experiencias memorables y acercan tu marca al consumidor.</div>
                     <div class="buttonsCarusel">
-                        <button>Saber mas</button>
+                        <button>Saber más</button>
                         <button>Quiero impulsar mi marca</button>
                     </div>
                 </div>
@@ -253,11 +257,12 @@
                 <img src="./images/carousel/cityprueba.jpg" alt="Imagen de banner 3">
                 <div class="ContentItem">
                     <div class="author">Publicidad</div>
-                    <div class="title">Itinerante</div>
-                    <div class="topic">Bogota</div>
-                    <div class="des">Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, perferendis tempore ipsa similique veritatis in ullam maxime? Velit, provident! Repellendus commodi quibusdam earum nisi eius veniam impedit ex odit praesentium.</div>
+                    <div class="title">Medios de</div>
+                    <div class="topic">transporte</div>
+                    <div class="des">🚍 Publicidad que se mueve con tu audiencia,
+                        lleva tu marca a donde están tus clientes con anuncios estratégicos en medios de transporte. Impacto visual, alto alcance y recordación garantizada. ¡Haz que todos hablen de ti mientras se desplazan!</div>
                     <div class="buttonsCarusel">
-                        <button>Saber mas</button>
+                        <button>Saber más</button>
                         <button>Quiero impulsar mi marca</button>
                     </div>
                 </div>
@@ -272,7 +277,7 @@
                             BAGU
                         </div>
                         <div class="des">
-                            Bogota
+                            Medios
                         </div>
                     </div>
                 </div>
@@ -280,10 +285,10 @@
                     <img src="./images/carousel/bogota.jpg" alt="Imagen del item 2">
                     <div class="contentThumbrail">
                         <div class="title">
-                            Transmilenio
+                            Volanteo
                         </div>
                         <div class="des">
-                            descripcion
+                            Activaciones
                         </div>
                     </div>
                 </div>
@@ -291,10 +296,10 @@
                     <img src="./images/carousel/cityprueba.jpg" alt="Imagen del item 1">
                     <div class="contentThumbrail">
                         <div class="title">
-                            inico
+                            Trasporte
                         </div>
                         <div class="des">
-                            descripcion
+                            Masivo
                         </div>
                     </div>
                 </div>
@@ -305,325 +310,40 @@
                 <button id="next">></button>
             </div>
             <div class="time">
-
             </div>
     </section>
-        <!--=====================================-->
-        <!--=        Project Area Start         =-->
-        <!--=====================================-->
-        <section class="section section-padding-2 bg-color-light">
-            <div class="container">
-                <div class="section-heading heading-left">
-                    <span class="subtitle">Portafolio</span>
-                    <h2 class="title">Tenemos lo que Necesitas</h2>
+        <!--BANNER DE SERVICIOS-->
+        <section class="serviceBanner">
+            <h3>¿COMO QUIERES IMPULSAR TU MARCA?</h3>
+            <div class="serviceItem">
+                <div class="serviceContent">
+                    <img src="./images/servicio/mano_volanteo.png" alt="" class="icon">
+                    <img src="./images/servicio/volante.jpg" alt="" class="icon2">
+                    <p>Volanteo</p>
                 </div>
-                <div class="axil-isotope-wrapper">
-                    <div class="isotope-button isotope-project-btn">
-                        <button data-filter="*" class="is-checked"><span class="filter-text">Todos</span></button>
-                        <button data-filter=".btl"><span class="filter-text">ACTIVACIONES DE MARCA</span></button>
-                        <button data-filter=".atl"><span class="filter-text">ATL</span></button>
-                        <button data-filter=".dtf"><span class="filter-text">DTF</span></button>
-                        <button data-filter=".web"><span class="filter-text">WEB</span></button>
-                        <button data-filter=".catering"><span class="filter-text">CATERING</span></button>
-                        <button data-filter=".pop"><span class="filter-text">MATERIAL POP</span></button>
-                    </div>
-                    <div class="row row-35 isotope-list">
-                        <div class="row row-35 isotope-list">
-                            <div class="col-md-6 project dtf">
-                                <div class="project-grid">
-                                    <div class="thumbnail">
-                                        <a href="./Dtf_impresiones.html">
-                                            <img src="./images/dtf/Imagensobre dtf.png" alt="Impresora dtf">
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <h4 class="title"><a href="#">DTF</a></h4>
-                                        <span class="subtitle">Impresiones en DTF</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>    
-                        <div class="col-md-6 project btl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/BTL-IMG/BTL-VOLANTEO.jpg" alt="VOLANTEO IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Volanteo</a></h4>
-                                    <span class="subtitle">Activaciones BTL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project btl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="./Carro_valla.html">
-                                        <img src="./assets/media/import/BTL-IMG/BTL-CARRO-VALLA.jpg" alt="CARRO VALLA IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="./Carro_valla.html">Carro valla</a></h4>
-                                    <span class="subtitle">Activaciones BTL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project btl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/BTL-IMG/BTL-MOTO-VALLA 1.jpg" alt="MOTOS VALLA IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Motos valla</a></h4>
-                                    <span class="subtitle">Activaciones BTL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project btl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/BTL-IMG/BTL-POPMAN-HOLOGRAMA.jpg" alt="POPMAN HOLOGRAFICO IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Poopman led holografico ¡NUEVO!</a></h4>
-                                    <span class="subtitle">Activaciones BTL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project atl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/ATL-IMG/ATL-VALLAS.jpg" alt="VALLAS IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Vallas</a></h4>
-                                    <span class="subtitle">Activaciones ATL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project btl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/BTL-IMG/BTL-BICI-VALLA.jpg" alt="BICI VALLA IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Bici valla</a></h4>
-                                    <span class="subtitle">Activaciones BTL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project catering">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/CATERING-IMG/CATERING-ALGODONERA.jpg" alt="ALGODONERA IAMGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="single-portfolio.html">Algoneras</a></h4>
-                                    <span class="subtitle">Activaciones CATERING</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project btl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/BTL-IMG/BTL-SCOOTER.jpg" alt="SCOOTER VALLA IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Scooter Valla</a></h4>
-                                    <span class="subtitle">Activaciones BTL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project btl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/BTL-IMG/BTL-ZANQUEROS.jpg" alt="ZANQUEROS IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Zanqueros-Batucada</a></h4>
-                                    <span class="subtitle">Activaciones BTL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project btl">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/BTL-IMG/BTL-ANIMADORES.jpg" alt="ANIMADORES IAMGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Animadores</a></h4>
-                                    <span class="subtitle">Activaciones BTL</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project catering">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="./crispetera.html">
-                                        <img src="./assets/media/import/CATERING-IMG/CATERING-CRISPETERA.jpg" alt="CRISPETERAS IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="./crispetera.html">Crispeteras</a></h4>
-                                    <span class="subtitle">Activaciones CATERING</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project catering">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/CATERING-IMG/CATERING-CARRITO-TILIN.jpg" alt="ESTACIONES DE HELADOS IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Estaciones de helados</a></h4>
-                                    <span class="subtitle">Activaciones CATERING</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project catering">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/CATERING-IMG/CATERING-ESTACIONES-DE-HOT-DOGS.jpg" alt="ESTACIONES DE HOT DOGS IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Estaciones de hotdogs</a></h4>
-                                    <span class="subtitle">Activaciones CATERING</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project catering">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/CATERING-IMG/CATERING COMIDA PARA EVENTOS.png" alt="COMIDA PARA EVENTOS  IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Refrigerios</a></h4>
-                                    <span class="subtitle">Activaciones CATERING</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project catering">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/CATERING-IMG/CATERING COMIDA PARA EVENTOS.png" alt="COMIDA PARA EVENTOS IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Comidas para eventos</a></h4>
-                                    <span class="subtitle">Activaciones CATERING</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project pop">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/POP-IMAGEN/POP-TEXTILES.jpg" alt="TEXTILES IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Textiles</a></h4>
-                                    <span class="subtitle">Activaciones POP</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project pop">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/POP-IMAGEN/POP-MUGS.jpg" alt="MUGS IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Mugs</a></h4>
-                                    <span class="subtitle">Activaciones POP</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project pop">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/POP-IMAGEN/POP-CUALQUIER-MATERIAL.jpg" alt="ESFEROS IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Esferos</a></h4>
-                                    <span class="subtitle">Activaciones POP</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project pop">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/POP-IMAGEN/POP-CARAMAÑOLAS.jpg" alt="CARAMAÑOLA IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Caramañolas</a></h4>
-                                    <span class="subtitle">Activaciones POP</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project pop">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/POP-IMAGEN/POP-TERMO.jpg" alt="BOTILITO IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Botilitos</a></h4>
-                                    <span class="subtitle">Activaciones POP</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 project web">
-                            <div class="project-grid">
-                                <div class="thumbnail">
-                                    <a href="#">
-                                        <img src="./assets/media/import/DISEÑO-WEB-IMAGEN/DISEÑO-WEB.jpg" alt="WEB IMAGEN">
-                                    </a>
-                                </div>
-                                <div class="content">
-                                    <h4 class="title"><a href="#">Diseño web</a></h4>
-                                    <span class="subtitle">Activaciones tec</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="serviceContent">
+                    <img src="./images/servicio/mano_volanteo.png" alt="" class="icon">
+                    <img src="./images/servicio/volante.jpg" alt="" class="icon2">
+                    <p style="bottom: 25px;">Publicidad <br> 
+                        en transporte</p>
+                </div>
+                <div class="serviceContent">
+                    <img src="./images/servicio/mano_volanteo.png" alt="" class="icon">
+                    <img src="./images/servicio/volante.jpg" alt="" class="icon2">
+                    <p style="bottom: 25px;">Marketing <br>
+                        Digital</p>
+                </div>
+                <div class="serviceContent">
+                    <img src="./images/servicio/mano_volanteo.png" alt="" class="icon">
+                    <img src="./images/servicio/volante.jpg" alt="" class="icon2">
+                    <p style="bottom: 25px;">Impresion <br> de textiles</p>
+                </div>
+                <div class="serviceContent radio">
+                    <img src="./images/servicio/mano_volanteo.png" alt="" class="icon">
+                    <img src="./images/servicio/volante.jpg" alt="" class="icon2">
+                    <p>Television, radio <br> y mas</p>
                 </div>
             </div>
-            <ul class="shape-group-7 list-unstyled">
-                <li class="shape shape-1"><img src="assets/media/others/circle-2.png" alt="circle"></li>
-                <li class="shape shape-2"><img src="assets/media/others/bubble-2.png" alt="Line"></li>
-                <li class="shape shape-3"><img src="assets/media/others/bubble-1.png" alt="Line"></li>
-            </ul>
         </section>
         <!--=====================================-->
         <!--=        Service Area Start         =-->

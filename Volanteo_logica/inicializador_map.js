@@ -1,8 +1,17 @@
- // Inicializa el mapa en Bogotá
+// Inicializa el mapa en Bogotá
 var map = L.map('map').setView([4.60971, -74.08175], 13);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap'
-}).addTo(map);
+
+
+
+        // Agregar la capa de MapTiler Streets v2 con tileLayer
+        L.tileLayer('https://api.maptiler.com/maps/streets-v2/{z}/{x}/{y}.png?key=74roQXZC4SrWWBYuZxhI', {
+          attribution: '&copy; <a href="https://www.maptiler.com/">MapTiler</a> contributors',
+          maxZoom: 20,
+          tileSize: 512,
+          zoomOffset: -1
+      }).addTo(map);
+
+
 
 // Variable global para almacenar el polígono de la localidad (si existe)
 var localityLayer;

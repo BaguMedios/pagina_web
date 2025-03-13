@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --color-principal: #d33968;
+    --color-secundario: #e6e6e6;
+}
+
+.serviceBanner {
+    position: relative;
+    width: 100vw;
+    height: 823px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../images/carousel/bogota.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* 🔥 Activa el efecto parallax */
+    overflow: hidden;
+}
+
+
+/* Título */
+.serviceBanner h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 1.4em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--color-principal);
+}
+
+/* Caritas de fondo */
+.serviceBanner .fondo {
+    width: 49px;
+    position: absolute;
+}
+
+/* Grid de los recuadros */
+.serviceBanner .serviceItem {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(358px, 1fr)); /* Se adapta dinámicamente */
+    grid-template-rows: repeat(5, 128px);
+    gap: 18px;
+    width: 90%; /* Mejor manejo de tamaño en pantallas grandes */
+    max-width: 1200px;
+}
+
+/* Fichas de servicio */
+.serviceBanner .serviceItem .serviceContent {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: visible;
+    background-color: var(--color-principal);
+    border-radius: 22px;
+    overflow: hidden;
+    z-index: 5;
+    cursor: pointer;
+    transition: background 0.5s ease-in-out;
+}
+
+/* Transición suave para el background */
+.serviceBanner .serviceItem .serviceContent:hover {
+    background-image: url('../images/carousel/bogota.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ícono principal */
+.serviceBanner .serviceItem .serviceContent .icon {
+    width: 167px;
+    position: absolute;
+    transform: rotate(-55deg);
+    opacity: 0;
+    left: -125px;
+    top: -20%;
+    transition: none;
+}
+
+/* Animación de entrada */
+.serviceBanner .serviceItem .serviceContent:hover .icon {
+    animation: animacionIcono 0.5s linear forwards;
+}
+
+@keyframes animacionIcono {
+    0% { transform: rotate(-55deg); opacity: 0; }
+    25% { transform: rotate(-40deg); opacity: 0.2; }
+    50% { transform: rotate(-20deg); opacity: 0.5; }
+    75% { transform: rotate(-5deg); opacity: 0.8; }
+    100% { transform: rotate(0deg); opacity: 1; left: 0px; }
+}
+
+/* Segundo ícono */
+.serviceBanner .serviceItem .serviceContent .icon2 {
+    width: 55px;
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    transform: rotate(25deg);
+    opacity: 1;
+}
+
+/* Animación de salida */
+.serviceBanner .serviceItem .serviceContent:hover .icon2 {
+    animation: salidaIcono 0.5s linear forwards;
+}
+
+@keyframes salidaIcono {
+    10% { opacity: 0.8; transform: rotate(20deg); }
+    20% { opacity: 0.8; transform: rotate(10deg); }
+    30% { opacity: 0.8; transform: rotate(0deg); }
+    40% { opacity: 0.5; transform: translateX(20px); }
+    70% { opacity: 0.3; transform: translateX(50px); }
+    100% { opacity: 0; transform: translateX(220px); }
+}
+
+/* Texto dentro de los servicios */
+.serviceBanner .serviceItem .serviceContent p {
+    margin: 0;
+    position: absolute;
+    right: 45px;
+    bottom: 45px;
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (min-width: 500px) {
+    .serviceBanner .serviceItem {
+        grid-template-columns: repeat(2, minmax(358px, 1fr)); /* Se adapta dinámicamente */
+        grid-template-rows: repeat(3, 128px);
+        gap: 38px;
+    }
+
+    /* Hacemos que una ficha específica ocupe dos columnas */
+    .serviceBanner .serviceItem .radio {
+        grid-column: span 2;
+    }
+    .serviceBanner {
+        position: relative;
+        width: 100vw;
+        height: 623px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-image: url('../images/carousel/cityprueba.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        overflow: hidden;
+    }
+
+        /* Texto dentro de los servicios */
+    .serviceBanner .serviceItem .serviceContent p {
+        margin: 0;
+        position: absolute;
+        right: 45px;
+        bottom: 45px;
+        color: white;
+        font-family: Poppins, sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+    }
+}
+

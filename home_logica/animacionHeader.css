@@ -1,10 +1,11 @@
 :root{
     --color_primario_bagu : #D33968;
-    --color_secundario_bagu : #3968d3;
+    --color_secundario_bagu : #e6e6e6;
+    --color-adicional:#e7dad4;
 }
     .bg {
-        animation:slide 3s ease-in-out infinite alternate;
-        background-image: linear-gradient(-60deg, var(--color_primario_bagu) 50%, var(--color_secundario_bagu) 50%);
+        animation:slide 4s ease-in-out infinite alternate;
+        background-image: linear-gradient(-60deg, var(--color_primario_bagu) 60%, var(--color_secundario_bagu) 40% , var(--color-adicional) 40%);
         bottom:0;
         left:-50%;
         opacity:.5;
