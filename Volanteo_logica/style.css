@@ -1,9 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+body{
+    font-family: Poppins ,sans-serif;
+}
+#app-volanteo{
+    width: 100vw;
+    height: auto;
+    position: relative;
+}
+
 /* 🎯 Estiliza el formulario */
 #volanteoForm {
-    margin: 20px;
+    width: 50vw;
+    height: auto;
+    margin: auto;
     padding: 15px;
     border-radius: 12px;
     background-color: rgba(0, 0, 0, 0.2);
+}
+
+.form-mapa-resultado{
+    width: 50vw;
+    
 }
 
 /* 🎯 Configuración del grid */
@@ -16,6 +33,7 @@
     grid-template-rows: auto auto;
     gap: 16px; /* Espacio mejorado */
     padding: 15px;
+    display: none;
 }
 
 /* 🎯 Estilo de cada elemento del grid */
@@ -57,6 +75,10 @@
 .TitleMapa {
     font-size: 35px;
     font-weight: bold;
+    font-family: Poppins , sans-serif;
+}
+.mapas{
+    display: none;
 }
 
 /* 🎯 Ajustes responsivos */

@@ -426,75 +426,92 @@
             </div>
         </div>
         </section>
-
         <!-- Sección del Mapa (Leaflet) -->
         <section style="padding: 25px;" id="app-volanteo">
-        <div class="container">
-            <div>
-            <span class="subtitle">Planifica tu campaña</span>
-            <h2 class="title">Planifica tu campaña con nuestra base de datos</h2>
-            <form id="volanteoForm">
-                <select name="localidad" id="localidad" class="form-control form-control-lg">
-                <option value="" disabled selected>Seleccione una localidad</option>
-                <option value="localidad usaquén">Localidad Usaquén</option>
-                <option value="localidad chapinero">Localidad Chapinero</option>
-                <option value="localidad santa fe">Localidad Santa Fe</option>
-                <option value="localidad san cristóbal">Localidad San Cristóbal</option>
-                <option value="localidad usme">Localidad Usme</option>
-                <option value="localidad tunjuelito">Localidad Tunjuelito</option>
-                <option value="localidad bosa">Localidad Bosa</option>
-                <option value="localidad kennedy">Localidad Kennedy</option>
-                <option value="localidad fontibón">Localidad Fontibón</option>
-                <option value="localidad engativá">Localidad Engativá</option>
-                <option value="localidad suba">Localidad Suba</option>
-                <option value="localidad barrios unidos">Localidad Barrios Unidos</option>
-                <option value="localidad teusaquillo">Localidad Teusaquillo</option>
-                <option value="localidad los mártires">Localidad Los Mártires</option>
-                <option value="localidad antonio nariño">Localidad Antonio Nariño</option>
-                <option value="localidad puente aranda">Localidad Puente Aranda</option>
-                <option value="localidad la candelaria">Localidad La Candelaria</option>
-                <option value="localidad rafael uribe uribe">Localidad Rafael Uribe Uribe</option>
-                <option value="localidad ciudad bolívar">Localidad Ciudad Bolívar</option>
-                <option value="localidad sumapaz">Localidad Sumapaz</option>
-                </select>
-                <div class="mb-3">
-                <label for="volanteadores" class="form-label">
-                    Número de Volanteadores: <span id="volanteadoresValue">1</span>
-                </label>
-                <input type="range" class="form-range" id="volanteadores" name="volanteadores" min="1" max="12" value="1" required>
-                </div>
-                <button type="submit" class="btn btn-outline-success btn-lg">Simular volanteo</button>
+            <form class="form-mapa-resultado">
+                    <p class="title">Para ver los datos llena este formulario</p>
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">Correo electronico</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="correo@dominio.com" required>
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                    <label for="exampleInputPassword1">Nombre</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Tratamiento de datos</label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ver resultado</button>
             </form>
-            <div id="resultado">
-                <!-- Mostramos los datos de la base de datos en caso de error -->
+            <div class="container">
+                    <span class="subtitle">Planifica tu campaña</span>
+                    <h2 class="title">Planifica tu campaña con nuestra base de datos</h2>
+                    <form id="volanteoForm">
+                        <div class="step-1">
+                            <label for="localidad">Porfavor indica la localidad donde vas a realizar la actividad</label>
+                            <select name="localidad" id="localidad" class="form-control form-control-lg">
+                                <option value="" disabled selected>Seleccione una localidad</option>
+                                <option value="localidad usaquén">Localidad Usaquén</option>
+                                <option value="localidad chapinero">Localidad Chapinero</option>
+                                <option value="localidad santa fe">Localidad Santa Fe</option>
+                                <option value="localidad san cristóbal">Localidad San Cristóbal</option>
+                                <option value="localidad usme">Localidad Usme</option>
+                                <option value="localidad tunjuelito">Localidad Tunjuelito</option>
+                                <option value="localidad bosa">Localidad Bosa</option>
+                                <option value="localidad kennedy">Localidad Kennedy</option>
+                                <option value="localidad fontibón">Localidad Fontibón</option>
+                                <option value="localidad engativá">Localidad Engativá</option>
+                                <option value="localidad suba">Localidad Suba</option>
+                                <option value="localidad barrios unidos">Localidad Barrios Unidos</option>
+                                <option value="localidad teusaquillo">Localidad Teusaquillo</option>
+                                <option value="localidad los mártires">Localidad Los Mártires</option>
+                                <option value="localidad antonio nariño">Localidad Antonio Nariño</option>
+                                <option value="localidad puente aranda">Localidad Puente Aranda</option>
+                                <option value="localidad la candelaria">Localidad La Candelaria</option>
+                                <option value="localidad rafael uribe uribe">Localidad Rafael Uribe Uribe</option>
+                                <option value="localidad ciudad bolívar">Localidad Ciudad Bolívar</option>
+                                <option value="localidad sumapaz">Localidad Sumapaz</option>
+                                </select>
+                        </div>
+                        <div class="mb-3 step-2">
+                            <label for="volanteadores" class="form-label">
+                                Número de Volanteadores: <span id="volanteadoresValue">1</span>
+                            </label>
+                            <input type="range" class="form-range" id="volanteadores" name="volanteadores" min="1" max="12" value="1" required>
+                            <button type="submit" class="btn btn-outline-success btn-lg">Simular volanteo</button>
+                        </div>
+                    </form>
+                    <div id="resultado">
+                        <!-- Mostramos los datos de la base de datos en caso de error -->
+                    </div>
+                    <div id="resultadoCheck">
+                        <div class="valores_resultado">
+                        <p class="valores">TÍTULO DE LOCALIDAD : </p>
+                        <p class="resultado" id="resultadoTitulo">En espera</p>
+                        </div>
+                        <div class="valores_resultado">
+                        <p class="valores" id="valorVolanteador">EFECTIVIDAD : </p>
+                        <p class="resultado" id="resultadoEfectividad">0%</p>
+                        </div>
+                        <div class="valores_resultado">
+                        <p class="valores">VOLANTES RECOMENDADOS POR DÍA : </p>
+                        <p class="resultado" id="resultadoVolantes">En espera</p>
+                        </div>
+                        <div class="valores_resultado">
+                        <p class="valores">Descripción de la zona: </p>
+                        <p class="resultado" id="resultadoDescripcion">En espera</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div>
+                    <div style="width: 100%; height: auto; margin: 30px 0px;" class="mapas">
+                        <p class="TitleMapa">ZONA DE EJECUCIÓN : </p>
+                        <!-- El mapa de Leaflet se integrará aquí -->
+                        <div id="map" style="width: 100%; height: 500px; border-radius: 25px;z-index: 1;"></div>
+                    </div>
             </div>
-            <div id="resultadoCheck">
-                <div class="valores_resultado">
-                <p class="valores">TÍTULO DE LOCALIDAD : </p>
-                <p class="resultado" id="resultadoTitulo">En espera</p>
-                </div>
-                <div class="valores_resultado">
-                <p class="valores" id="valorVolanteador">EFECTIVIDAD : </p>
-                <p class="resultado" id="resultadoEfectividad">0%</p>
-                </div>
-                <div class="valores_resultado">
-                <p class="valores">VOLANTES RECOMENDADOS POR DÍA : </p>
-                <p class="resultado" id="resultadoVolantes">En espera</p>
-                </div>
-                <div class="valores_resultado">
-                <p class="valores">Descripción de la zona: </p>
-                <p class="resultado" id="resultadoDescripcion">En espera</p>
-                </div>
-            </div>
-            </div>
-            <div>
-            <div style="width: 100%; height: auto; margin: 30px 0px;">
-                <p class="TitleMapa">ZONA DE EJECUCIÓN : </p>
-                <!-- El mapa de Leaflet se integrará aquí -->
-                <div id="map" style="width: 100%; height: 500px; border-radius: 25px;z-index: 1;"></div>
-            </div>
-            </div>
-        </div>
         </section>
 
         <!-- Footer -->

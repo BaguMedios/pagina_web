@@ -3,7 +3,8 @@ document.getElementById("volanteoForm").addEventListener("submit", function (e) 
 
     const localidad = document.getElementById("localidad").value;
     const volanteadores = document.getElementById("volanteadores").value;
-
+    const resultado = document.getElementById('resultadoCheck');
+    const mapa = document.querySelector('.mapas');
     console.log(`Se envió un formulario con la localidad: ${localidad}`);
     console.log(`Se envió un formulario con el número de volanteadores: ${volanteadores}`);
 
@@ -19,6 +20,11 @@ document.getElementById("volanteoForm").addEventListener("submit", function (e) 
             if (data.error) {
                 document.getElementById("resultado").innerHTML = `<p>${data.error}</p>`;
             } else {
+                //mostramos los datos
+                resultado.style.display = 'grid';
+                resultado.style.filter = 'blur(10px)';
+                mapa.style.display = 'block';
+                mapa.style.filter = 'blur(10px)';
                 document.getElementById('resultadoTitulo').innerHTML = `${data.localidad}`;
                 document.getElementById('resultadoEfectividad').innerHTML = `${data.data.efectividad}%`;
                 document.getElementById('resultadoVolantes').innerHTML = `${data.data.volantes_recomendados}`;
